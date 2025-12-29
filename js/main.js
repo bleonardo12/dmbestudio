@@ -144,6 +144,12 @@ function initContactForm() {
             .then(function(response) {
                 console.log('✓ Email enviado exitosamente:', response);
 
+                // Registrar conversión en Google Ads
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {'send_to': 'AW-17836122309/NUwBCPr2t9kbEMXB9rhC'});
+                    console.log('✓ Conversión registrada en Google Ads');
+                }
+
                 // Mensaje de éxito
                 showMessage('¡Gracias por contactarme! Responderé tu consulta a la brevedad.', 'success');
 
