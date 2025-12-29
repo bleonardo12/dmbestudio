@@ -146,7 +146,7 @@ function initContactForm() {
 
                 // Registrar conversión en Google Ads
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {'send_to': 'AW-17836122309/NUwBCPr2t9kbEMXB9rhC'});
+                    gtag('event', 'conversion', {'send_to': 'AW-17836122309/NUvBCPr2t9kbEMXB9rhC'});
                     console.log('✓ Conversión registrada en Google Ads');
                 }
 
