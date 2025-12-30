@@ -4,9 +4,9 @@
 // IMPORTANTE: Reemplaza estos valores con tus credenciales de EmailJS
 // Tutorial completo en README.md
 const EMAILJS_CONFIG = {
-    serviceID: 'TU_SERVICE_ID',      // Reemplazar con tu Service ID de EmailJS
-    templateID: 'TU_TEMPLATE_ID',    // Reemplazar con tu Template ID de EmailJS
-    publicKey: 'TU_PUBLIC_KEY'       // Reemplazar con tu Public Key de EmailJS
+    serviceID: 'service_sqh0r9p',      // Service ID de EmailJS
+    templateID: 'template_nkjdqq9',    // Template ID de EmailJS
+    publicKey: 'ZVip-2JVyka3hVGj7'     // Public Key de EmailJS
 };
 
 // ========== INICIALIZACIÓN ==========
@@ -143,6 +143,12 @@ function initContactForm() {
             )
             .then(function(response) {
                 console.log('✓ Email enviado exitosamente:', response);
+
+                // Registrar conversión en Google Ads
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {'send_to': 'AW-17836122309/NUvBCPr2t9kbEMXB9rhC'});
+                    console.log('✓ Conversión registrada en Google Ads');
+                }
 
                 // Mensaje de éxito
                 showMessage('¡Gracias por contactarme! Responderé tu consulta a la brevedad.', 'success');
