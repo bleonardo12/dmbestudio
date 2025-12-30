@@ -254,7 +254,7 @@ section {
     height: 380px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center 8%;
     z-index: 1;
     box-shadow: 0 20px 60px rgba(212, 145, 159, 0.4);
     border: 8px solid rgba(255, 255, 255, 0.9);
