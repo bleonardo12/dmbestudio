@@ -216,17 +216,14 @@ function initAnimations() {
     });
 }
 
-// ========== TRACKING (Google Ads / GA4) ==========
+// ========== TRACKING (Google Tag Manager dataLayer) ==========
 function trackEvent(eventName) {
-    if (typeof gtag === 'function') {
-        gtag('event', eventName, {
-            event_category: 'whatsapp',
-            event_label: eventName
-        });
-    }
-    if (typeof fbq === 'function') {
-        fbq('track', 'Contact', { content_name: eventName });
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': eventName,
+        'event_category': 'conversion',
+        'event_label': eventName
+    });
 }
 
 // ========== UTILIDADES ==========
