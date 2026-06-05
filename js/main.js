@@ -144,10 +144,10 @@ function initContactForm() {
             .then(function(response) {
                 console.log('✓ Email enviado exitosamente:', response);
 
-                // Mensaje de éxito
+                trackEvent('form_submit');
+
                 showMessage('¡Gracias por contactarme! Responderé tu consulta a la brevedad.', 'success');
 
-                // Limpiar formulario
                 form.reset();
 
                 // Redireccionar a WhatsApp (opcional)

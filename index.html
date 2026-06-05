@@ -11,15 +11,29 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.dmbestudio.com/">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#B5737E">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="DM Bava Estudio Contable | Contadora Pública Buenos Aires">
     <meta property="og:description" content="Servicios contables e impositivos profesionales. Balances, ganancias, ARCA, planificación tributaria. Primera consulta sin cargo.">
     <meta property="og:url" content="https://www.dmbestudio.com/">
     <meta property="og:locale" content="es_AR">
+    <meta property="og:image" content="https://www.dmbestudio.com/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DM Bava Estudio Contable - Contadora Pública Nacional en Buenos Aires">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="DM Bava Estudio Contable">
     <meta name="twitter:description" content="Contadora Pública Nacional en Buenos Aires. Primera consulta sin cargo.">
+    <meta name="twitter:image" content="https://www.dmbestudio.com/img/og-image.jpg">
 
     <!-- Schema.org: AccountingService + LocalBusiness -->
     <script type="application/ld+json">
@@ -88,6 +102,17 @@
     }
     </script>
 
+    <!-- Google Tag Manager -->
+    <!-- REEMPLAZAR GTM-XXXXXXX con tu ID de Google Tag Manager -->
+    <!-- Obtenerlo en: https://tagmanager.google.com/ -->
+    <!--
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    -->
+
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -96,6 +121,11 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <!--
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    -->
 
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
@@ -112,6 +142,7 @@
                     <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonios">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
                 <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20consultar%20sobre%20servicios%20contables"
@@ -555,6 +586,102 @@
                            class="btn btn-whatsapp-custom btn-lg" target="_blank" onclick="trackEvent('whatsapp_faq')">
                             <i class="bi bi-whatsapp me-2"></i>Escribime directamente
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section id="testimonios" class="testimonials-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-badge">Clientes</span>
+                <h2 class="section-title">Lo que dicen quienes trabajan conmigo</h2>
+                <p class="section-description">Profesionales y empresas que confían en DM Bava Estudio Contable</p>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Daniela nos ayudó a ordenar toda la parte impositiva de nuestra empresa. Muy profesional, clara y siempre disponible para consultas. Totalmente recomendable."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar"><i class="bi bi-person-fill"></i></div>
+                            <div>
+                                <h5 class="testimonial-name">Martín R.</h5>
+                                <p class="testimonial-role">PyME — Rubro Construcción</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card testimonial-featured">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Como médica independiente necesitaba a alguien que entienda mi situación. Daniela maneja todo lo de ARCA y ganancias con una precisión y dedicación increíble."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar"><i class="bi bi-person-fill"></i></div>
+                            <div>
+                                <h5 class="testimonial-name">Dra. Laura M.</h5>
+                                <p class="testimonial-role">Médica Independiente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Excelente trabajo en la pericia contable para nuestro juicio. Su experiencia en el PJN fue clave para el resultado favorable. Muy recomendada."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar"><i class="bi bi-person-fill"></i></div>
+                            <div>
+                                <h5 class="testimonial-name">Lic. Carlos B.</h5>
+                                <p class="testimonial-role">Abogado — Estudio Jurídico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Indicadores de confianza -->
+            <div class="trust-bar mt-5 pt-4">
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="trust-item">
+                            <i class="bi bi-award-fill"></i>
+                            <h4>Matrícula CPCECABA</h4>
+                            <p>Contadora Pública habilitada</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trust-item">
+                            <i class="bi bi-building-fill"></i>
+                            <h4>Exp. Corporativa</h4>
+                            <p>Jefa Contadora en INTeA–INTA</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trust-item">
+                            <i class="bi bi-file-earmark-text-fill"></i>
+                            <h4>Pericia Judicial</h4>
+                            <p>PJN y Poder Judicial CABA</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trust-item">
+                            <i class="bi bi-chat-dots-fill"></i>
+                            <h4>Primera consulta</h4>
+                            <p>100% sin cargo</p>
+                        </div>
                     </div>
                 </div>
             </div>
