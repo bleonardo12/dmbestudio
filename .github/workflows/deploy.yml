@@ -1,0 +1,51 @@
+name: Deploy al VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar SSH Agent y Clave
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Registrar Host de Confianza
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 2222 -H srv777726.hstgr.cloud >> ~/.ssh/known_hosts
+
+      - name: Deploy al VPS
+        run: |
+          ssh -p 2222 root@srv777726.hstgr.cloud << 'ENDSSH'
+            set -e
+            echo "📦 Iniciando deploy dmbestudio..."
+
+            if [ -d "/var/www/dmbestudio/.git" ]; then
+              echo "🔄 Repo encontrado, actualizando..."
+              cd /var/www/dmbestudio
+              git fetch origin main
+              git reset --hard origin/main
+            else
+              echo "📥 Clonando repo..."
+              rm -rf /var/www/dmbestudio
+              git clone https://github.com/bleonardo12/dmbestudio.git /var/www/dmbestudio
+              cd /var/www/dmbestudio
+            fi
+
+            echo "✅ Último commit:"
+            git log -1 --oneline
+            echo "🎉 Deploy completado!"
+          ENDSSH
+
+      - name: Notificar resultado
+        if: success()
+        run: echo "✅ Deploy exitoso a srv777726.hstgr.cloud"

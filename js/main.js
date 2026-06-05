@@ -216,6 +216,19 @@ function initAnimations() {
     });
 }
 
+// ========== TRACKING (Google Ads / GA4) ==========
+function trackEvent(eventName) {
+    if (typeof gtag === 'function') {
+        gtag('event', eventName, {
+            event_category: 'whatsapp',
+            event_label: eventName
+        });
+    }
+    if (typeof fbq === 'function') {
+        fbq('track', 'Contact', { content_name: eventName });
+    }
+}
+
 // ========== UTILIDADES ==========
 
 // Validar email

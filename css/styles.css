@@ -1,17 +1,17 @@
 /* ========== DM BAVA ESTUDIO CONTABLE - ESTILOS PRINCIPALES ========== */
 
-/* Variables de color - Paleta Rosado Pastel Profesional */
+/* Variables de color - Paleta profesional con acento rosado muted */
 :root {
-    --primary: #D4919F;           /* Rosado principal - profesional y cálido */
-    --primary-dark: #B47283;      /* Rosado oscuro para hover */
-    --secondary: #E8B4C8;         /* Rosado pastel suave */
-    --accent: #8B5A7A;            /* Morado-rosado para detalles */
-    --dark: #3D2E35;              /* Gris oscuro con tinte rosado */
-    --text: #4A3642;              /* Color de texto principal */
-    --light: #FFF5F9;             /* Fondo rosado muy suave */
+    --primary: #B5737E;           /* Rose muted - profesional y elegante */
+    --primary-dark: #96545E;      /* Rose oscuro para hover */
+    --secondary: #CFA4AE;         /* Rose pastel suave */
+    --accent: #5E3D52;            /* Ciruela oscuro - autoridad */
+    --dark: #1E1E2E;              /* Azul-oscuro neutro - más profesional */
+    --text: #3D3D4D;              /* Texto neutro oscuro */
+    --light: #F5F5F7;             /* Fondo casi blanco, sin tinte rosa */
     --white: #FFFFFF;
     --gray: #F8F9FA;
-    --border: #E8D4DC;            /* Borde suave rosado */
+    --border: #E2DADE;            /* Borde sutil rose-neutro */
 }
 
 /* Reset y configuración base */
@@ -137,7 +137,7 @@ section {
 
 /* ========== HERO SECTION ========== */
 .hero-section {
-    background: linear-gradient(135deg, #FFF5F9 0%, #FFE8F0 50%, #FFF5F9 100%);
+    background: linear-gradient(135deg, #F5F5F7 0%, #EEE8EC 50%, #F5F5F7 100%);
     position: relative;
     padding-top: 80px;
     overflow: hidden;
@@ -235,7 +235,7 @@ section {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(232, 180, 200, 0.3), rgba(139, 90, 122, 0.2));
+    background: linear-gradient(135deg, rgba(181, 115, 126, 0.2), rgba(94, 61, 82, 0.15));
     animation: float 6s ease-in-out infinite;
 }
 
@@ -311,9 +311,11 @@ section {
     border-radius: 20px;
     padding: 2rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    box-shadow: 0 5px 20px rgba(212, 145, 159, 0.08);
+    box-shadow: 0 5px 20px rgba(181, 115, 126, 0.08);
 }
 
 .service-card:hover {
@@ -457,7 +459,7 @@ section {
 .about-image-placeholder {
     width: 100%;
     height: 500px;
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    background: linear-gradient(135deg, var(--accent), var(--dark));
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -550,7 +552,7 @@ section {
 
 /* ========== CONTACT SECTION ========== */
 .contact-section {
-    background: linear-gradient(135deg, #FFF5F9 0%, var(--white) 100%);
+    background: linear-gradient(135deg, #F5F5F7 0%, var(--white) 100%);
     padding: 5rem 0;
 }
 
@@ -844,6 +846,268 @@ section {
 /* ========== SMOOTH SCROLL ========== */
 html {
     scroll-behavior: smooth;
+}
+
+/* ========== HERO - NUEVOS ELEMENTOS ========== */
+.hero-badge-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.hero-badge-free {
+    display: inline-block;
+    background: #25D366;
+    color: var(--white);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp-hero {
+    background: #25D366;
+    color: var(--white);
+    border: none;
+    padding: 0.85rem 2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    font-size: 1rem;
+}
+
+.btn-whatsapp-hero:hover {
+    background: #20BA5A;
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp-custom {
+    background: #25D366;
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp-custom:hover {
+    background: #20BA5A;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+/* ========== HERO VISUAL (floating cards) ========== */
+.hero-visual {
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-center-circle {
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 10px 40px rgba(212, 145, 159, 0.4);
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.hero-center-circle i {
+    font-size: 3.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.hero-center-circle span {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-card-float {
+    position: absolute;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--dark);
+    box-shadow: 0 8px 30px rgba(212, 145, 159, 0.2);
+    border: 2px solid var(--border);
+    white-space: nowrap;
+}
+
+.hero-card-float i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.hero-card-float.card-1 {
+    top: 60px;
+    left: -20px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-card-float.card-2 {
+    top: 80px;
+    right: -10px;
+    animation: float 7s ease-in-out infinite 1s;
+}
+
+.hero-card-float.card-3 {
+    bottom: 80px;
+    left: 10px;
+    animation: float 6s ease-in-out infinite 0.5s;
+}
+
+/* ========== SERVICIOS - BOTÓN WHATSAPP POR SERVICIO ========== */
+.btn-service-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: #25D366;
+    color: var(--white) !important;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+    min-height: 46px;
+}
+
+.service-card .btn-service-wa {
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.btn-service-wa:hover {
+    background: #20BA5A;
+    color: var(--white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-service-wa.featured {
+    background: #25D366;
+}
+
+/* ========== FAQ SECTION ========== */
+.faq-section {
+    background-color: var(--light);
+    padding: 5rem 0;
+}
+
+.faq-accordion .faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--border);
+    overflow: hidden;
+}
+
+.faq-accordion .faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-button {
+    background: var(--white);
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+}
+
+.faq-button:not(.collapsed) {
+    background: var(--light);
+    color: var(--primary);
+    box-shadow: none;
+}
+
+.faq-button::after {
+    filter: none;
+}
+
+.faq-button:not(.collapsed)::after {
+    filter: none;
+}
+
+.faq-button i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.faq-body {
+    background: var(--white);
+    padding: 1.25rem 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    border-top: 1px solid var(--border);
+}
+
+.faq-cta-text {
+    font-size: 1.1rem;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* ========== WHATSAPP FLOAT - TOOLTIP ========== */
+.whatsapp-tooltip-text {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--dark);
+    color: var(--white);
+    padding: 0.4rem 0.85rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.whatsapp-tooltip-text::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 4px solid transparent;
+    border-left-color: var(--dark);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip-text {
+    opacity: 1;
 }
 
 /* ========== ANIMACIONES ========== */
