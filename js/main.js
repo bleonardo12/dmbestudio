@@ -1,246 +1,230 @@
-// ========== DM BAVA ESTUDIO CONTABLE - MAIN JS ==========
+/* ==========================================================================
+   DM Bava Estudio Contable — main.js
+   Navegación, acordeón FAQ, formulario → WhatsApp y medición (dataLayer/GTM).
+   Sin dependencias externas. Sin credenciales de terceros en el cliente.
+   ========================================================================== */
+(function () {
+  'use strict';
 
-// Configuración de EmailJS
-// IMPORTANTE: Reemplaza estos valores con tus credenciales de EmailJS
-// Tutorial completo en README.md
-const EMAILJS_CONFIG = {
-    serviceID: 'service_sqh0r9p',
-    templateID: 'template_nkjdqq9',
-    publicKey: 'ZVip-2JVyka3hVGj7'
-};
+  /* ---------------------------------------------------------------------
+     CONFIGURACIÓN DEL SITIO
+     ---------------------------------------------------------------------
+     calendlyUrl: dejar en null mientras no exista el evento de Calendly.
+     Con null, los CTAs de "reunión" apuntan a WhatsApp (ver data-calendly
+     en el HTML). Al cargar la URL real acá, esos mismos CTAs pasan a abrir
+     Calendly automáticamente y disparan el evento `calendly_open`.
+     Ejemplo: calendlyUrl: 'https://calendly.com/dmbestudio/consulta-20-min'
+     --------------------------------------------------------------------- */
+  var SITE_CONFIG = {
+    whatsapp: '5491128276362',
+    calendlyUrl: null
+  };
 
-// ========== INICIALIZACIÓN ==========
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar EmailJS
-    if (typeof emailjs !== 'undefined') {
-        emailjs.init(EMAILJS_CONFIG.publicKey);
-        console.log('✓ EmailJS inicializado correctamente');
-    } else {
-        console.error('✗ EmailJS no está cargado. Verifica que el script esté en el HTML.');
-    }
+  window.DMB = window.DMB || {};
+  window.DMB.config = SITE_CONFIG;
 
-    // Inicializar componentes
-    initNavbar();
-    initSmoothScroll();
-    initContactForm();
-    initAnimations();
-
-    console.log('✓ DM Bava Estudio Contable - Sitio cargado exitosamente');
-});
-
-// ========== NAVBAR SCROLL EFFECT ==========
-function initNavbar() {
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Efecto de scroll en navbar
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        // Active link según sección visible
-        updateActiveLink();
-    });
-
-    // Cerrar menú móvil al hacer clic en un link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                navbarToggler.click();
-            }
-        });
-    });
-}
-
-// Actualizar link activo según la sección visible
-function updateActiveLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            if (navLink) {
-                navLink.classList.add('active');
-            }
-        }
-    });
-}
-
-// ========== SMOOTH SCROLL ==========
-function initSmoothScroll() {
-    const links = document.querySelectorAll('a[href^="#"]');
-
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-
-            // Verificar que no sea solo "#" y que el elemento exista
-            if (href !== '#' && href.length > 1) {
-                const target = document.querySelector(href);
-
-                if (target) {
-                    e.preventDefault();
-
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.offsetTop - navbarHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
-    });
-}
-
-// ========== FORMULARIO DE CONTACTO ==========
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const btnLoader = document.getElementById('btnLoader');
-    const formMessage = document.getElementById('formMessage');
-
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Validar que EmailJS esté configurado
-            if (EMAILJS_CONFIG.serviceID === 'TU_SERVICE_ID' ||
-                EMAILJS_CONFIG.templateID === 'TU_TEMPLATE_ID' ||
-                EMAILJS_CONFIG.publicKey === 'TU_PUBLIC_KEY') {
-
-                showMessage('Por favor, configura EmailJS en el archivo js/main.js. Consulta README.md para instrucciones.', 'danger');
-                return;
-            }
-
-            // Deshabilitar botón y mostrar loader
-            submitBtn.disabled = true;
-            btnText.classList.add('d-none');
-            btnLoader.classList.remove('d-none');
-            formMessage.innerHTML = '';
-            formMessage.className = '';
-
-            // Enviar email con EmailJS
-            emailjs.sendForm(
-                EMAILJS_CONFIG.serviceID,
-                EMAILJS_CONFIG.templateID,
-                form
-            )
-            .then(function(response) {
-                console.log('✓ Email enviado exitosamente:', response);
-
-                trackEvent('form_submit');
-
-                showMessage('¡Gracias por contactarme! Responderé tu consulta a la brevedad.', 'success');
-
-                form.reset();
-
-                // Redireccionar a WhatsApp (opcional)
-                setTimeout(() => {
-                    const whatsappMsg = encodeURIComponent('Hola Daniela, acabo de enviar una consulta por el formulario web.');
-                    window.open(`https://wa.me/5491128276362?text=${whatsappMsg}`, '_blank');
-                }, 2000);
-
-            })
-            .catch(function(error) {
-                console.error('✗ Error al enviar email:', error);
-                showMessage('Hubo un error al enviar tu consulta. Por favor, intenta contactarme por WhatsApp.', 'danger');
-            })
-            .finally(function() {
-                // Rehabilitar botón
-                submitBtn.disabled = false;
-                btnText.classList.remove('d-none');
-                btnLoader.classList.add('d-none');
-            });
-        });
-    }
-}
-
-// Mostrar mensaje de respuesta del formulario
-function showMessage(message, type) {
-    const formMessage = document.getElementById('formMessage');
-    formMessage.innerHTML = `
-        <div class="alert alert-${type}" role="alert">
-            <i class="bi bi-${type === 'success' ? 'check-circle-fill' : 'exclamation-triangle-fill'} me-2"></i>
-            ${message}
-        </div>
-    `;
-
-    // Scroll suave al mensaje
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    // Auto-ocultar después de 8 segundos
-    if (type === 'success') {
-        setTimeout(() => {
-            formMessage.innerHTML = '';
-        }, 8000);
-    }
-}
-
-// ========== ANIMACIONES ==========
-function initAnimations() {
-    // Intersection Observer para animaciones al hacer scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observar elementos para animar
-    const animateElements = document.querySelectorAll('.service-card, .client-type-card, .contact-item');
-    animateElements.forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// ========== TRACKING (Google Tag Manager dataLayer) ==========
-function trackEvent(eventName) {
+  /* ---------- Medición: única util de tracking (AUDITORIA §2) ---------- */
+  function track(event, params) {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': eventName,
-        'event_category': 'conversion',
-        'event_label': eventName
+    var payload = { event: event, page_path: location.pathname };
+    if (params) {
+      for (var k in params) {
+        if (Object.prototype.hasOwnProperty.call(params, k) && params[k]) payload[k] = params[k];
+      }
+    }
+    window.dataLayer.push(payload);
+  }
+  window.DMB.track = track;
+
+  function waLink(text) {
+    return 'https://wa.me/' + SITE_CONFIG.whatsapp + (text ? '?text=' + encodeURIComponent(text) : '');
+  }
+  window.DMB.waLink = waLink;
+
+  /* ---------- Calendly: activar CTAs si hay URL configurada ---------- */
+  function initCalendly() {
+    var nodes = document.querySelectorAll('[data-calendly]');
+    if (!SITE_CONFIG.calendlyUrl) return; // se quedan como CTAs de WhatsApp
+    Array.prototype.forEach.call(nodes, function (el) {
+      el.setAttribute('href', SITE_CONFIG.calendlyUrl);
+      el.setAttribute('data-cta-type', 'calendly');
+      var label = el.getAttribute('data-calendly-label');
+      if (label) el.textContent = label;
     });
-}
+  }
 
-// ========== UTILIDADES ==========
+  /* ---------- Tracking por delegación en todos los CTAs ---------- */
+  function initTracking() {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var location_ = a.getAttribute('data-cta') || 'sin_definir';
+      var service = a.getAttribute('data-service') || '';
 
-// Validar email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+      if (a.getAttribute('data-cta-type') === 'calendly' || href.indexOf('calendly.com') > -1) {
+        track('calendly_open', { cta_location: location_ });
+      } else if (href.indexOf('wa.me') > -1) {
+        track('whatsapp_click', { cta_location: location_, service_name: service });
+      } else if (href.indexOf('mailto:') === 0) {
+        track('email_click', { cta_location: location_ });
+      } else if (href.indexOf('tel:') === 0) {
+        track('phone_click', { cta_location: location_ });
+      }
+    }, true);
 
-// Validar teléfono argentino
-function isValidPhone(phone) {
-    const phoneRegex = /^[\d\s\-\+\(\)]{8,}$/;
-    return phoneRegex.test(phone);
-}
+    // Calendly embebido/popup: evento de reserva confirmada (A4)
+    window.addEventListener('message', function (e) {
+      if (typeof e.origin === 'string' && e.origin.indexOf('calendly.com') === -1) return;
+      var d = e.data;
+      if (d && typeof d.event === 'string' && d.event === 'calendly.event_scheduled') {
+        track('calendly_booked', { cta_location: 'calendly_widget' });
+      }
+    });
+  }
 
-// Logs informativos
-console.log('%c DM Bava Estudio Contable ', 'background: #D4919F; color: white; font-size: 16px; font-weight: bold; padding: 10px;');
-console.log('%c Desarrollado con ❤️ para profesionales contables ', 'color: #8B5A7A; font-size: 12px;');
-console.log('%c Si necesitas ayuda con EmailJS, consulta el README.md ', 'color: #4A3642; font-size: 11px;');
+  /* ---------- Navbar: menú mobile + link activo ---------- */
+  function initNav() {
+    var toggle = document.querySelector('.nav__toggle');
+    var links = document.querySelector('.nav__links');
+    if (toggle && links) {
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          links.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    var anchors = document.querySelectorAll('.nav__links a[href^="#"]');
+    if (!anchors.length || !('IntersectionObserver' in window)) return;
+
+    var byId = {};
+    Array.prototype.forEach.call(anchors, function (a) {
+      byId[a.getAttribute('href').slice(1)] = a;
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        Array.prototype.forEach.call(anchors, function (a) { a.classList.remove('is-active'); });
+        var active = byId[entry.target.id];
+        if (active) active.classList.add('is-active');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    Object.keys(byId).forEach(function (id) {
+      var section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+  }
+
+  /* ---------- FAQ: acordeón exclusivo ---------- */
+  function initFaq() {
+    var items = document.querySelectorAll('.faq-item');
+    if (!items.length) return;
+
+    Array.prototype.forEach.call(items, function (item) {
+      var btn = item.querySelector('.faq-q');
+      var panel = item.querySelector('.faq-a');
+      if (!btn || !panel) return;
+
+      btn.addEventListener('click', function () {
+        var willOpen = btn.getAttribute('aria-expanded') !== 'true';
+
+        Array.prototype.forEach.call(items, function (other) {
+          var b = other.querySelector('.faq-q');
+          var p = other.querySelector('.faq-a');
+          if (!b || !p) return;
+          b.setAttribute('aria-expanded', 'false');
+          p.hidden = true;
+          var i = b.querySelector('.icon');
+          if (i) i.textContent = '+';
+        });
+
+        if (willOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          panel.hidden = false;
+          var icon = btn.querySelector('.icon');
+          if (icon) icon.textContent = '−';
+          track('faq_open', { question: btn.getAttribute('data-q') || btn.textContent.trim().slice(0, 80) });
+        }
+      });
+    });
+  }
+
+  /* ---------- Formulario de contacto → WhatsApp (sin backend) ---------- */
+  function initForm() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+
+    var status = document.getElementById('formStatus');
+    var enviosEnSesion = 0;
+
+    function say(msg, kind) {
+      if (!status) return;
+      status.textContent = msg;
+      status.className = 'form-status' + (kind ? ' is-' + kind : '');
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot (S5): si viene con valor, es un bot. Se descarta en silencio.
+      var hp = form.querySelector('[name="website"]');
+      if (hp && hp.value.trim() !== '') return;
+
+      // Límite simple de envíos por sesión (S5)
+      if (enviosEnSesion >= 3) {
+        say('Ya enviaste varias consultas. Escribime directamente por WhatsApp.', 'error');
+        return;
+      }
+
+      var nombre = (form.elements.nombre.value || '').trim();
+      var servicio = (form.elements.servicio.value || '').trim();
+      var mensaje = (form.elements.mensaje.value || '').trim();
+
+      if (nombre.length < 2) {
+        say('Dejame tu nombre (y empresa, si corresponde) para poder responderte.', 'error');
+        form.elements.nombre.focus();
+        return;
+      }
+      if (mensaje.length < 5) {
+        say('Contame brevemente tu consulta así te respondo con algo concreto.', 'error');
+        form.elements.mensaje.focus();
+        return;
+      }
+
+      var texto = 'Hola Daniela, soy ' + nombre + '. Me interesa: ' +
+        (servicio || 'una consulta general') + '. ' + mensaje;
+
+      enviosEnSesion++;
+      track('form_submit', {
+        cta_location: 'contact_form',
+        service_name: servicio || 'sin_especificar'
+      });
+
+      say('Listo: se abre WhatsApp con tu mensaje ya escrito.', 'ok');
+      window.open(waLink(texto), '_blank', 'noopener');
+    });
+  }
+
+  /* ---------- Init ---------- */
+  function init() {
+    initCalendly();
+    initTracking();
+    initNav();
+    initFaq();
+    initForm();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

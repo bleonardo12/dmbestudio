@@ -1,0 +1,18 @@
+# Cabeceras de seguridad para hostings tipo Netlify / Cloudflare Pages.
+# El hosting actual es un VPS con nginx: ahí las cabeceras se aplican desde
+# nginx/security-headers.conf. Este archivo se mantiene por portabilidad y
+# debe mantenerse sincronizado con esa configuración.
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.analytics.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://analytics.google.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://region1.google-analytics.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net https://calendly.com https://*.calendly.com; manifest-src 'self'; upgrade-insecure-requests
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/monotributo-escala.json
+  Cache-Control: public, max-age=300, must-revalidate

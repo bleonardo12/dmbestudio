@@ -1,350 +1,137 @@
-# DM Bava Estudio Contable - Sitio Web Profesional
+# DM Bava Estudio Contable — dmbestudio.com
 
-Sitio web profesional para **Daniela Magalí Bava**, Contadora Pública Nacional especializada en servicios contables, impositivos y estratégicos.
+Sitio del estudio contable de **Daniela Magalí Bava**, Contadora Pública Nacional
+(CPCECABA, Buenos Aires). Posicionado en **PyMEs y empresas**: balances, Impuesto
+a las Ganancias (sociedades y personas humanas) y Bienes Personales. El
+monotributo queda como servicio secundario, con una calculadora de categoría como
+imán de tráfico.
 
-## 📋 Descripción
-
-Sitio web moderno y profesional diseñado específicamente para un estudio contable de alto nivel. Incluye:
-
-- ✅ Diseño responsive (móvil, tablet y desktop)
-- ✅ Paleta de colores rosado pastel profesional
-- ✅ 9 servicios contables detallados
-- ✅ Formulario de contacto con EmailJS
-- ✅ Integración con WhatsApp (flotante y formularios)
-- ✅ Animaciones suaves y profesionales
-- ✅ SEO optimizado
+**Conversión primaria:** WhatsApp. **Secundaria:** reunión agendada.
 
 ---
 
-## 🎨 Paleta de Colores
+## Stack
 
-El diseño utiliza una paleta rosado pastel profesional que transmite calidez, confianza y carácter:
+Sitio **estático**, sin build, sin frameworks y sin dependencias de terceros en el
+cliente. HTML + CSS + JavaScript vanilla.
 
-```css
---primary: #D4919F        /* Rosado principal */
---primary-dark: #B47283   /* Rosado oscuro (hover) */
---secondary: #E8B4C8      /* Rosado pastel suave */
---accent: #8B5A7A         /* Morado-rosado (detalles) */
---dark: #3D2E35           /* Texto principal */
---light: #FFF5F9          /* Fondos suaves */
-```
+- Tipografía **Space Grotesk** self-hosteada (`/fonts`, `font-display: swap`).
+- Sin Bootstrap, sin Bootstrap Icons, sin Google Fonts, sin EmailJS.
+- Único script de terceros: **Google Tag Manager** (`GTM-K26768CX`).
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura
 
 ```
-dm-bava-contable/
-│
-├── index.html              # Página principal (única página)
-├── README.md               # Este archivo
-├── INSTRUCCIONES_RAPIDAS.md  # Guía rápida de 5 minutos
-│
-├── css/
-│   └── styles.css          # Estilos personalizados
-│
+dmbestudio/
+├── index.html                        # Home (una página con anclas)
+├── calculadora-monotributo/
+│   └── index.html                    # Página propia de la calculadora (SEO)
+├── notas/                            # Blog indexable
+│   ├── index.html                    # Listado
+│   ├── recategorizacion-monotributo-agosto-2026/
+│   ├── bienes-personales-como-anticiparse/
+│   └── cierre-de-balance-checklist-pymes/
+├── css/styles.css                    # Toda la hoja de estilos
 ├── js/
-│   └── main.js             # JavaScript principal + EmailJS
-│
-└── img/
-    └── (agregar fotos profesionales aquí)
+│   ├── main.js                       # Config, nav, FAQ, formulario, track()
+│   └── calculadora.js                # Lógica de la calculadora
+├── data/monotributo-escala.json      # Escala ARCA (actualización semestral)
+├── fonts/                            # Space Grotesk woff2
+├── img/                              # Foto + og-image
+├── nginx/                            # Cabeceras de seguridad para el VPS
+├── _headers                          # Equivalente para Netlify/Cloudflare
+├── MEDICION.md                       # Eventos, GTM y conversiones de Ads
+├── robots.txt · sitemap.xml · manifest.json · favicon.svg
+└── .github/workflows/deploy.yml      # Deploy automático al VPS
 ```
 
 ---
 
-## ⚙️ Configuración Inicial
+## Deploy
 
-### 1. Abrir el proyecto
-
-Simplemente abre `index.html` en tu navegador para ver el sitio localmente.
-
-### 2. Configurar EmailJS (Formulario de Contacto)
-
-El formulario de contacto utiliza **EmailJS** para enviar emails sin necesidad de backend.
-
-#### Paso 1: Crear cuenta en EmailJS
-
-1. Ve a https://www.emailjs.com/
-2. Haz clic en **"Sign Up"** (Registrarse)
-3. Completa el registro con tu email
-4. Verifica tu email
-
-#### Paso 2: Conectar tu cuenta de Gmail
-
-1. En el dashboard de EmailJS, ve a **"Email Services"**
-2. Haz clic en **"Add New Service"**
-3. Selecciona **"Gmail"**
-4. Haz clic en **"Connect Account"**
-5. Inicia sesión con la cuenta Gmail que quieres usar para recibir mensajes
-6. Autoriza EmailJS
-7. Dale un nombre al servicio (ej: "DM_Bava_Contacto")
-8. **COPIA el Service ID** (ejemplo: `service_abc123`)
-
-#### Paso 3: Crear plantilla de email
-
-1. Ve a **"Email Templates"**
-2. Haz clic en **"Create New Template"**
-3. Configura así:
-
-**Template Name:** `DM Bava Contact Form`
-
-**Subject:**
-```
-Nueva consulta desde DM Bava Estudio Contable
-```
-
-**Content (Body):**
-```html
-<p><strong>Nueva consulta desde el sitio web</strong></p>
-
-<p><strong>Nombre:</strong> {{from_name}}</p>
-<p><strong>Email:</strong> {{from_email}}</p>
-<p><strong>Teléfono:</strong> {{phone}}</p>
-<p><strong>Servicio de interés:</strong> {{service}}</p>
-
-<p><strong>Mensaje:</strong></p>
-<p>{{message}}</p>
-
-<hr>
-<p><em>Este mensaje fue enviado desde el formulario de contacto de DM Bava Estudio Contable</em></p>
-```
-
-4. En **"To Email"** coloca: `danielambava@gmail.com`
-5. **COPIA el Template ID** (ejemplo: `template_xyz789`)
-6. Haz clic en **"Save"**
-
-#### Paso 4: Obtener Public Key
-
-1. Ve a **"Account"** → **"General"**
-2. Busca tu **Public Key** (ejemplo: `abcd1234efgh5678`)
-3. **COPIA esta Public Key**
-
-#### Paso 5: Configurar en el código
-
-Abre el archivo `js/main.js` y reemplaza las credenciales:
-
-```javascript
-const EMAILJS_CONFIG = {
-    serviceID: 'service_abc123',     // Tu Service ID aquí
-    templateID: 'template_xyz789',   // Tu Template ID aquí
-    publicKey: 'abcd1234efgh5678'    // Tu Public Key aquí
-};
-```
-
-**¡Listo!** El formulario de contacto ya funciona.
-
----
-
-## 🚀 Despliegue en Netlify
-
-### Opción 1: Desde la interfaz de Netlify
-
-1. Ve a https://app.netlify.com/
-2. Haz clic en **"Add new site"** → **"Import an existing project"**
-3. Conecta tu cuenta de GitHub
-4. Selecciona el repositorio `dm-bava-contable`
-5. Configuración:
-   - **Branch to deploy:** `main`
-   - **Build command:** (dejar vacío)
-   - **Publish directory:** `/`
-6. Haz clic en **"Deploy site"**
-
-### Opción 2: Netlify CLI
+Automático: **push a `main` → GitHub Actions → SSH al VPS → `git reset --hard origin/main`**
+en `/var/www/dmbestudio`. No hay build ni paso manual.
 
 ```bash
-# Instalar Netlify CLI
-npm install -g netlify-cli
-
-# Iniciar sesión
-netlify login
-
-# Desplegar
-netlify deploy --prod
+git add -A && git commit -m "…" && git push
 ```
 
-### Dominio personalizado (opcional)
-
-1. En Netlify, ve a **"Domain settings"**
-2. Haz clic en **"Add custom domain"**
-3. Sigue las instrucciones para configurar tu dominio
+> El deploy **no toca la configuración de nginx**. Las cabeceras de seguridad se
+> aplican una sola vez siguiendo las instrucciones de
+> [nginx/security-headers.conf](nginx/security-headers.conf).
 
 ---
 
-## 📝 Personalización
+## Mantenimiento
 
-### Cambiar textos
+### Actualizar la escala del monotributo (cada semestre)
 
-Todos los textos están en `index.html`. Busca y reemplaza según necesites.
+ARCA publica valores nuevos habitualmente en **enero y agosto**. Hay que tocar
+dos lugares:
 
-### Cambiar colores
+1. [data/monotributo-escala.json](data/monotributo-escala.json) — filas de
+   `categorias`, más `vigenciaDesde` y `vigenciaTexto`.
+2. La tabla estática de [calculadora-monotributo/index.html](calculadora-monotributo/index.html)
+   (está duplicada a propósito: se sirve en HTML para que Google la indexe).
 
-Edita las variables CSS en `css/styles.css`:
+También conviene actualizar la mención "vigente desde el 1/8/2026" en el texto de
+la home y de la página de la calculadora.
 
-```css
-:root {
-    --primary: #D4919F;       /* Color principal */
-    --accent: #8B5A7A;        /* Color de acento */
-    /* ... otros colores */
-}
-```
+### Activar Calendly
 
-### Agregar foto profesional
+En [js/main.js](js/main.js), `SITE_CONFIG.calendlyUrl`. Mientras esté en `null`,
+todos los CTAs de "Agendar reunión" abren WhatsApp. Al cargar la URL real, esos
+mismos botones pasan a abrir Calendly y a emitir el evento `calendly_open` — no
+hay que tocar el HTML.
 
-1. Guarda tu foto en la carpeta `img/` (ejemplo: `img/daniela-bava.jpg`)
-2. En `index.html`, busca la sección "Sobre Mí"
-3. Reemplaza el placeholder:
+### Cambiar el número de WhatsApp
 
-```html
-<!-- ANTES -->
-<div class="about-image-placeholder">
-    <i class="bi bi-person-circle"></i>
-    <p>Foto profesional</p>
-</div>
+Está en `SITE_CONFIG.whatsapp` ([js/main.js](js/main.js)) para lo que genera el
+JS, y hardcodeado en los `href` de los CTAs del HTML (para que funcionen sin
+JavaScript). Si cambia, hay que buscar y reemplazar `5491128276362` en todo el repo.
 
-<!-- DESPUÉS -->
-<img src="img/daniela-bava.jpg" alt="Daniela Magalí Bava" class="img-fluid rounded" style="border-radius: 20px; box-shadow: 0 15px 40px rgba(212, 145, 159, 0.3);">
-```
+### Agregar una nota al blog
 
-### Agregar/modificar servicios
-
-En `index.html`, busca la sección `<!-- Servicio X -->` y duplica el bloque:
-
-```html
-<div class="col-md-6 col-lg-4">
-    <div class="service-card">
-        <div class="service-icon">
-            <i class="bi bi-ICONO-AQUI"></i>
-        </div>
-        <h3 class="service-title">Nombre del Servicio</h3>
-        <p class="service-description">Descripción...</p>
-        <ul class="service-features">
-            <li><i class="bi bi-check-circle-fill"></i> Característica 1</li>
-            <li><i class="bi bi-check-circle-fill"></i> Característica 2</li>
-        </ul>
-    </div>
-</div>
-```
-
-**Iconos disponibles:** https://icons.getbootstrap.com/
+1. Copiar una carpeta existente de `notas/` y renombrarla con el slug nuevo.
+2. Actualizar title, description, canonical, OG, el schema `Article` y el contenido.
+3. Agregar la card en [notas/index.html](notas/index.html) y —si va destacada— en
+   la sección `#notas` de [index.html](index.html).
+4. Sumar la URL a [sitemap.xml](sitemap.xml).
 
 ---
 
-## 📱 Integración con WhatsApp
+## Medición
 
-El sitio tiene **dos** botones de WhatsApp:
+Ver **[MEDICION.md](MEDICION.md)**: eventos del `dataLayer`, qué crear en GTM y
+qué conversiones importar en Google Ads.
 
-1. **Botón flotante** (abajo a la derecha)
-2. **Botón en el navbar** (arriba a la derecha)
-3. **Botón en la sección de contacto**
+Para trackear un CTA nuevo alcanza con agregarle `data-cta="…"` (y
+`data-service="…"` si aplica). El listener está delegado, no hay que tocar JS.
 
-Todos redirigen al WhatsApp de Daniela: **+54 9 11 2827-6362**
+---
 
-### Personalizar mensaje predeterminado
+## Seguridad
 
-En `index.html`, busca los enlaces de WhatsApp y modifica el parámetro `text`:
+- Sin credenciales de terceros en el cliente (el formulario abre WhatsApp, no usa backend).
+- Todos los `target="_blank"` llevan `rel="noopener noreferrer"`.
+- Honeypot + límite de envíos por sesión en el formulario.
+- Sin `console.log` en producción.
+- CSP, HSTS, `X-Content-Type-Options`, `Referrer-Policy` y `Permissions-Policy`
+  en [nginx/security-headers.conf](nginx/security-headers.conf).
 
-```html
-<!-- ANTES -->
-<a href="https://wa.me/5491128276362?text=Hola%20Daniela,%20me%20interesa%20consultar%20sobre%20servicios%20contables">
+---
 
-<!-- DESPUÉS (ejemplo) -->
-<a href="https://wa.me/5491128276362?text=Hola%20Daniela,%20vi%20tu%20web%20y%20necesito%20asesoramiento%20en%20ganancias">
+## Desarrollo local
+
+El sitio usa rutas absolutas (`/css/…`) y la calculadora hace `fetch` del JSON,
+así que **no funciona abriendo `index.html` con doble clic**. Hay que servirlo:
+
+```bash
+npx serve .        # o python -m http.server 8000
 ```
 
 ---
 
-## 🔧 Tecnologías Utilizadas
-
-- **HTML5** - Estructura
-- **CSS3** - Estilos (diseño personalizado)
-- **JavaScript** (Vanilla) - Funcionalidad
-- **Bootstrap 5.3.2** - Framework CSS responsive
-- **Bootstrap Icons** - Iconografía
-- **EmailJS** - Envío de emails del formulario
-- **Google Fonts** - Tipografías (Montserrat + Playfair Display)
-
----
-
-## ✅ Checklist de Lanzamiento
-
-Antes de publicar el sitio, verifica:
-
-- [ ] EmailJS configurado correctamente (`js/main.js`)
-- [ ] Foto profesional agregada (opcional)
-- [ ] Todos los textos revisados
-- [ ] Links de WhatsApp funcionando
-- [ ] Email `danielambava@gmail.com` correcto
-- [ ] Teléfono `+54 9 11 2827-6362` correcto
-- [ ] Prueba del formulario de contacto
-- [ ] Prueba en móvil, tablet y desktop
-- [ ] SEO: título y descripción correctos
-
----
-
-## 📞 Soporte
-
-Si tienes problemas con:
-
-- **EmailJS**: Consulta la documentación oficial en https://www.emailjs.com/docs/
-- **Netlify**: Consulta https://docs.netlify.com/
-- **Dudas generales**: Revisa el archivo `INSTRUCCIONES_RAPIDAS.md`
-
----
-
-## 🎯 Servicios Incluidos
-
-El sitio presenta 9 servicios contables:
-
-1. ✅ Armado de Balances Empresariales
-2. ✅ Declaración Jurada de Ganancias
-3. ✅ Alta de Servicios en ARCA
-4. ✅ Asesoramiento Impositivo
-5. ✅ Planificación Tributaria
-6. ✅ Auditoría Contable
-7. ✅ Gestión de Facturación Electrónica
-8. ✅ Asesoramiento en Inversiones y Capital
-9. ✅ Pericia Contable de Parte (PJN y CABA)
-
----
-
-## 📊 Tipos de Clientes
-
-El sitio está optimizado para atraer:
-
-- 👔 Profesionales Independientes
-- 🚀 Emprendedores
-- 🏢 PyMEs
-- 🌐 Grandes Empresas
-
----
-
-## 🎨 Características de Diseño
-
-- **Corporativo moderno**: Diseño limpio y profesional
-- **Rosado pastel con carácter**: Colores cálidos pero firmes
-- **Responsive total**: Perfecto en cualquier dispositivo
-- **Animaciones suaves**: Transiciones elegantes
-- **Call-to-actions claros**: Botones estratégicos para conversión
-- **Carga rápida**: Código optimizado
-
----
-
-## 📄 Licencia
-
-Este sitio fue desarrollado específicamente para **DM Bava Estudio Contable**.
-
-© 2025 DM Bava Estudio Contable. Todos los derechos reservados.
-
----
-
-## 🚀 Próximos Pasos Sugeridos
-
-1. Agregar blog con artículos sobre impuestos y contabilidad
-2. Integrar calculadora de monotributo online
-3. Agregar testimonios de clientes
-4. Crear sección de "Preguntas Frecuentes" expandida
-5. Integrar calendario para agendar consultas online
-
----
-
-**¿Necesitas ayuda?** Contacta al desarrollador o consulta la documentación adicional en `INSTRUCCIONES_RAPIDAS.md`.
+© 2026 DM Bava Estudio Contable

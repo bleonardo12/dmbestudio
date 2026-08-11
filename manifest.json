@@ -1,18 +1,21 @@
 {
   "name": "DM Bava Estudio Contable",
-  "short_name": "DM Bava",
-  "description": "Contadora Pública Nacional en Buenos Aires. Balances, ganancias, ARCA, planificación tributaria.",
+  "short_name": "DMB.estudio",
+  "description": "Estudio contable para PyMEs y empresas en Buenos Aires: balances, Ganancias y Bienes Personales.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#F5F5F7",
-  "theme_color": "#B5737E",
+  "background_color": "#0D0F12",
+  "theme_color": "#0D0F12",
   "lang": "es-AR",
+  "dir": "ltr",
+  "categories": ["business", "finance"],
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }

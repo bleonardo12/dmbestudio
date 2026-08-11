@@ -1,818 +1,612 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- SEO optimizado para Google Ads y búsqueda local -->
-    <title>DM Bava Estudio Contable | Contadora Pública Buenos Aires</title>
-    <meta name="description" content="Daniela Bava, Contadora Pública Nacional en Buenos Aires. Balances, ganancias, monotributo, ARCA, planificación tributaria y pericia judicial. Primera consulta sin cargo.">
-    <meta name="keywords" content="contadora pública buenos aires, estudio contable, balances empresariales, declaración jurada ganancias, monotributo, ARCA AFIP, asesoramiento impositivo, pericia contable, planificación tributaria">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.dmbestudio.com/">
+<!-- ===== SEO ===== -->
+<title>Estudio Contable para PyMEs en Buenos Aires | Balances, Ganancias y Bienes Personales — DM Bava</title>
+<meta name="description" content="Balances y estados contables, Impuesto a las Ganancias (sociedades y personas humanas) y Bienes Personales para PyMEs y empresas de Buenos Aires. Daniela Bava, Contadora Pública Nacional, ex Jefa Contadora en INTeA (INTA). Primera consulta sin cargo.">
+<meta name="keywords" content="estudio contable pymes buenos aires, balances empresariales, impuesto a las ganancias sociedades, bienes personales, planificación fiscal, auditoría contable, pericia contable de parte, contadora pública CABA">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Daniela Magalí Bava">
+<link rel="canonical" href="https://www.dmbestudio.com/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="shortcut icon" href="/favicon.svg">
-    <link rel="apple-touch-icon" href="/favicon.svg">
+<!-- ===== Identidad / PWA ===== -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0D0F12">
 
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#B5737E">
+<!-- ===== Open Graph / Twitter ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DM Bava Estudio Contable">
+<meta property="og:title" content="Estudio Contable para PyMEs en Buenos Aires — DM Bava">
+<meta property="og:description" content="Balances, Ganancias (sociedades y personas humanas) y Bienes Personales resueltos con estándar corporativo. Primera consulta sin cargo.">
+<meta property="og:url" content="https://www.dmbestudio.com/">
+<meta property="og:locale" content="es_AR">
+<meta property="og:image" content="https://www.dmbestudio.com/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DM Bava Estudio Contable — contabilidad clara y al día para tu empresa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Estudio Contable para PyMEs en Buenos Aires — DM Bava">
+<meta name="twitter:description" content="Balances, Ganancias y Bienes Personales para PyMEs y empresas. Primera consulta sin cargo.">
+<meta name="twitter:image" content="https://www.dmbestudio.com/img/og-image.png">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="DM Bava Estudio Contable | Contadora Pública Buenos Aires">
-    <meta property="og:description" content="Servicios contables e impositivos profesionales. Balances, ganancias, ARCA, planificación tributaria. Primera consulta sin cargo.">
-    <meta property="og:url" content="https://www.dmbestudio.com/">
-    <meta property="og:locale" content="es_AR">
-    <meta property="og:image" content="https://www.dmbestudio.com/img/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="DM Bava Estudio Contable - Contadora Pública Nacional en Buenos Aires">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DM Bava Estudio Contable">
-    <meta name="twitter:description" content="Contadora Pública Nacional en Buenos Aires. Primera consulta sin cargo.">
-    <meta name="twitter:image" content="https://www.dmbestudio.com/img/og-image.jpg">
+<!-- ===== Performance: fuente self-hosted ===== -->
+<link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- Schema.org: AccountingService + LocalBusiness -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["AccountingService", "LocalBusiness"],
-      "name": "DM Bava Estudio Contable",
-      "url": "https://www.dmbestudio.com/",
-      "telephone": "+5491128276362",
-      "email": "danielambava@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Buenos Aires",
-        "addressRegion": "CABA",
-        "addressCountry": "Argentina"
-      },
-      "openingHours": ["Mo-Fr 09:00-18:00"],
-      "description": "Estudio contable especializado en balances empresariales, declaraciones juradas, ARCA, planificación tributaria y pericia contable judicial.",
-      "priceRange": "$$",
-      "founder": {
-        "@type": "Person",
-        "name": "Daniela Magalí Bava",
-        "jobTitle": "Contadora Pública Nacional"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios Contables",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Armado de Balances Empresariales"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Declaración Jurada de Ganancias"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Alta de Servicios en ARCA"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Asesoramiento Impositivo"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pericia Contable de Parte"}}
-        ]
-      }
+<!-- ===== Critical CSS (above the fold). El resto en /css/styles.css ===== -->
+<style>
+:root{--bg:#0D0F12;--bg-alt:#0A0C0F;--surface:#12151A;--border:#22262C;--border-hover:#3A414A;--hairline:#1A1E24;--text:#EDEFF2;--text-soft:#C6CCD2;--text-muted:#9AA3AD;--text-faint:#5C6670;--accent:#6FE3B4;--accent-hover:#9BEECB;--on-accent:#06231A;--pad-x:5%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px var(--pad-x);background:rgba(13,15,18,.92);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.hero{padding:84px var(--pad-x) 56px;display:flex;flex-direction:column;gap:28px}
+.hero__title{font-size:clamp(38px,5.4vw,64px);line-height:1.04;font-weight:700;letter-spacing:-2px;margin:0;max-width:19ch}
+</style>
+<link rel="stylesheet" href="/css/styles.css">
+
+<!-- ===== Schema.org: negocio + servicios ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.dmbestudio.com/#estudio",
+  "name": "DM Bava Estudio Contable",
+  "url": "https://www.dmbestudio.com/",
+  "image": "https://www.dmbestudio.com/img/og-image.png",
+  "telephone": "+5491128276362",
+  "email": "danielambava@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad Autónoma de Buenos Aires",
+    "addressRegion": "CABA",
+    "addressCountry": "AR"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Ciudad Autónoma de Buenos Aires"},
+    {"@type": "Country", "name": "Argentina"}
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "description": "Estudio contable para PyMEs y empresas: balances y estados contables, Impuesto a las Ganancias de sociedades y personas humanas, Bienes Personales, planificación fiscal, auditoría contable y pericia contable de parte.",
+  "priceRange": "$$",
+  "currenciesAccepted": "ARS",
+  "founder": {"@id": "https://www.dmbestudio.com/#daniela"},
+  "employee": {"@id": "https://www.dmbestudio.com/#daniela"},
+  "knowsLanguage": "es-AR",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios contables e impositivos",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Balances y estados contables", "description": "Estados contables mensuales, trimestrales y anuales con análisis de ratios e informes gerenciales."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Impuesto a las Ganancias — Sociedades", "description": "Liquidación y declaración jurada del Impuesto a las Ganancias para sociedades."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ganancias y Bienes Personales — Personas humanas", "description": "Declaraciones juradas para directores, accionistas y profesionales, con análisis patrimonial."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Planificación fiscal", "description": "Estructura fiscal, proyecciones y estrategias para reducir la carga impositiva dentro de la ley."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Auditoría contable", "description": "Auditoría externa, due diligence y control de gestión."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pericia contable de parte", "description": "Informes técnicos para procesos judiciales en el PJN y el fuero de CABA."}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monotributo y autónomos", "description": "Alta, recategorización y facturación al día para independientes."}}
+    ]
+  }
+}
+</script>
+
+<!-- ===== Schema.org: Person (E-E-A-T) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.dmbestudio.com/#daniela",
+  "name": "Daniela Magalí Bava",
+  "givenName": "Daniela Magalí",
+  "familyName": "Bava",
+  "jobTitle": "Contadora Pública Nacional",
+  "image": "https://www.dmbestudio.com/img/daniela-bava.webp",
+  "url": "https://www.dmbestudio.com/#sobre-mi",
+  "worksFor": {"@id": "https://www.dmbestudio.com/#estudio"},
+  "telephone": "+5491128276362",
+  "email": "danielambava@gmail.com",
+  "knowsAbout": [
+    "Estados contables",
+    "Impuesto a las Ganancias",
+    "Impuesto sobre los Bienes Personales",
+    "Monotributo",
+    "Planificación fiscal",
+    "Auditoría contable",
+    "Pericia contable judicial"
+  ],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Matrícula profesional",
+    "name": "Contadora Pública Nacional — Matrícula CPCECABA",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires"
     }
-    </script>
+  }
+}
+</script>
 
-    <!-- Schema.org: FAQ para rich results en Google -->
-    <script type="application/ld+json">
+<!-- ===== Schema.org: FAQPage (sincronizado 1:1 con la sección #faq) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Trabajan con monotributistas y autónomos?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Sí, brindamos servicios contables e impositivos para monotributistas, autónomos, profesionales independientes y emprendedores de todos los rubros."}
-        },
-        {
-          "@type": "Question",
-          "name": "¿La primera consulta tiene costo?",
-          "acceptedAnswer": {"@type": "Answer", "text": "No. La primera consulta es sin cargo. Podés contactarme por WhatsApp o completar el formulario para coordinar una reunión."}
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué es una pericia contable de parte?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Una pericia contable de parte es un informe técnico elaborado por un contador para ser presentado en un proceso judicial. Cuento con experiencia en el Poder Judicial de la Nación (PJN) y CABA."}
-        },
-        {
-          "@type": "Question",
-          "name": "¿Trabajan con PyMEs y empresas?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Sí. Tengo amplia experiencia corporativa como Jefa Contadora en INTeA (empresa de capitales mixtos asociada al INTA), lo que me permite manejar estructuras contables complejas de cualquier tamaño."}
-        }
-      ]
+      "@type": "Question",
+      "name": "¿Con qué tipo de empresas trabajás?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Principalmente PyMEs y sociedades (SRL, SA, SAS) de todos los rubros, además de directores, accionistas y profesionales con patrimonio que necesitan Ganancias y Bienes Personales bien resueltos. Mi experiencia como Jefa Contadora en INTeA me permite manejar estructuras contables complejas."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo es el proceso de cierre de balance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Primero relevamos la documentación y el estado de los registros. Después armo los estados contables completos, con análisis de ratios e informe para la dirección. Trabajo con fechas pautadas de antemano para que llegues a las presentaciones sin correr."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hacés Ganancias de personas humanas y Bienes Personales?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí. Es uno de los ejes del estudio: DDJJ de Ganancias y Bienes Personales para directores, accionistas y profesionales, con planificación para pagar lo justo dentro de la ley."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿La primera consulta tiene costo?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. La primera consulta es sin cargo: revisamos tu situación y te digo con claridad qué necesitás y qué no."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Atendés monotributistas?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí, como servicio adicional: alta, recategorización y facturación al día. El foco del estudio está en empresas, pero muchos clientes empezaron como monotributistas y crecieron con el estudio."}
     }
-    </script>
+  ]
+}
+</script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K26768CX');</script>
-    <!-- End Google Tag Manager -->
+<!-- ===== Consent Mode v2 (defaults antes de GTM) ===== -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'denied', functionality_storage: 'granted',
+  security_storage: 'granted', wait_for_update: 500,
+  region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH']
+});
+gtag('consent', 'default', {
+  ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted',
+  analytics_storage: 'granted', functionality_storage: 'granted', security_storage: 'granted'
+});
+</script>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+<!-- ===== Google Tag Manager ===== -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K26768CX');</script>
+<!-- End Google Tag Manager -->
 </head>
+
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K26768CX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K26768CX"
+height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#inicio">
-                <span class="brand-text">DM Bava</span>
-                <span class="brand-subtitle">Estudio Contable</span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonios">Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                </ul>
-                <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20consultar%20sobre%20servicios%20contables"
-                   class="btn btn-primary-custom ms-lg-3" target="_blank" rel="noopener"
-                   onclick="trackEvent('whatsapp_navbar')">
-                    <i class="bi bi-whatsapp me-2"></i>Consulta Ahora
-                </a>
-            </div>
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav" aria-label="Navegación principal">
+  <a class="nav__brand" href="#inicio">DMB<span class="dot">.</span>estudio</a>
+
+  <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú" title="Abrir menú">☰</button>
+
+  <div class="nav__links" id="navLinks">
+    <a href="#servicios">Servicios</a>
+    <a href="#calculadora">Calculadora</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#notas">Notas</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <a class="nav__cta"
+     href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20agendar%20una%20reuni%C3%B3n"
+     target="_blank" rel="noopener noreferrer"
+     data-calendly data-calendly-label="Agendar reunión" data-cta="navbar">Agendar reunión</a>
+</nav>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section id="inicio" class="hero">
+  <p class="hero__eyebrow"><span class="bullet" aria-hidden="true"></span><span>Contadora Pública Nacional · Matrícula CPCECABA · Buenos Aires</span></p>
+
+  <h1 class="hero__title">La contabilidad de tu empresa, <span class="hl">clara y al día.</span></h1>
+
+  <div class="hero__row">
+    <p class="hero__text">Balances, Impuesto a las Ganancias (sociedades y personas humanas) y Bienes Personales, resueltos por Daniela Bava — contadora con experiencia corporativa como Jefa Contadora en INTeA (INTA). Atención directa, no un call center.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary"
+         href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20una%20consulta%20sin%20cargo%20para%20mi%20empresa"
+         target="_blank" rel="noopener noreferrer" data-cta="hero">Primera consulta gratis</a>
+      <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat__value">INTeA · INTA</div><div class="stat__label">ex Jefa Contadora, empresa de capitales mixtos</div></div>
+    <div class="stat"><div class="stat__value">PJN · CABA</div><div class="stat__label">perito contable judicial</div></div>
+    <div class="stat"><div class="stat__value">&lt; 24 hs</div><div class="stat__label">de respuesta, siempre</div></div>
+    <div class="stat"><div class="stat__value">$0</div><div class="stat__label">tu primera consulta</div></div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section id="servicios" class="section">
+  <div class="section-head">
+    <h2 class="section-title">Servicios para empresas</h2>
+    <span class="overline">PyMEs · Sociedades · Directores</span>
+  </div>
+
+  <div class="grid grid--cards">
+    <article class="card">
+      <span class="overline">Empresas</span>
+      <h3 class="card__title">Balances y estados contables</h3>
+      <p class="card__text">Estados contables mensuales, trimestrales y anuales con estándar corporativo, análisis de ratios e informes gerenciales.</p>
+      <a class="card__link" href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20el%20servicio%20de%20Balances%20y%20estados%20contables"
+         target="_blank" rel="noopener noreferrer" data-cta="service_card" data-service="balances">Consultar este servicio →</a>
+    </article>
+
+    <article class="card">
+      <span class="overline">Empresas</span>
+      <h3 class="card__title">Ganancias — Sociedades</h3>
+      <p class="card__text">Liquidación y DDJJ del Impuesto a las Ganancias para sociedades, con optimización legal de la carga tributaria.</p>
+      <a class="card__link" href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20Ganancias%20para%20mi%20sociedad"
+         target="_blank" rel="noopener noreferrer" data-cta="service_card" data-service="ganancias_sociedades">Consultar este servicio →</a>
+    </article>
+
+    <article class="card">
+      <span class="overline">Personas humanas</span>
+      <h3 class="card__title">Ganancias y Bienes Personales</h3>
+      <p class="card__text">DDJJ para directores, accionistas y profesionales. Análisis patrimonial completo y planificación anticipada.</p>
+      <a class="card__link" href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20Ganancias%20y%20Bienes%20Personales"
+         target="_blank" rel="noopener noreferrer" data-cta="service_card" data-service="ganancias_bienes_personales">Consultar este servicio →</a>
+    </article>
+
+    <article class="card">
+      <span class="overline">Estrategia</span>
+      <h3 class="card__title">Planificación fiscal</h3>
+      <p class="card__text">Estructura fiscal, proyecciones y estrategias para reducir la carga impositiva dentro de la ley.</p>
+      <a class="card__link" href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Planificaci%C3%B3n%20fiscal"
+         target="_blank" rel="noopener noreferrer" data-cta="service_card" data-service="planificacion_fiscal">Consultar este servicio →</a>
+    </article>
+
+    <article class="card">
+      <span class="overline">Control</span>
+      <h3 class="card__title">Auditoría contable</h3>
+      <p class="card__text">Auditoría externa, due diligence y control de gestión para dar transparencia y confianza a tus números.</p>
+      <a class="card__link" href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Auditor%C3%ADa%20contable"
+         target="_blank" rel="noopener noreferrer" data-cta="service_card" data-service="auditoria">Consultar este servicio →</a>
+    </article>
+
+    <article class="card">
+      <span class="overline">Judicial</span>
+      <h3 class="card__title">Pericia contable de parte</h3>
+      <p class="card__text">Informes técnicos para procesos judiciales, con experiencia real como perito en el PJN y el fuero de CABA.</p>
+      <a class="card__link" href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Pericia%20contable%20de%20parte"
+         target="_blank" rel="noopener noreferrer" data-cta="service_card" data-service="pericia">Consultar este servicio →</a>
+    </article>
+  </div>
+
+  <div class="banner">
+    <p>¿Sos monotributista o autónomo? También trabajo con independientes: alta, recategorización y facturación al día.</p>
+    <a href="#calculadora">Calculá tu categoría →</a>
+  </div>
+</section>
+
+<!-- ===== CALCULADORA ===== -->
+<section id="calculadora" class="section section--alt" data-calculadora>
+  <div class="grid grid--split">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span class="overline">Herramienta gratuita</span>
+      <h2 class="section-title">¿Qué categoría de monotributo te corresponde?</h2>
+      <p class="lead">Ingresá tu facturación de los últimos 12 meses y conocé tu categoría, la cuota mensual y cuánto margen te queda antes del próximo escalón. Escala oficial de ARCA vigente desde el 1/8/2026.</p>
+      <p class="fineprint">La categoría definitiva también depende de superficie, energía, alquileres y precio unitario. Esta estimación no reemplaza la verificación en ARCA ni el asesoramiento profesional.</p>
+      <p class="fineprint"><a href="/calculadora-monotributo/">Ver la escala completa y cómo se recategoriza →</a></p>
+    </div>
+
+    <div class="calc-panel">
+      <div class="field">
+        <label for="calcMonto">Facturación anual (últimos 12 meses)</label>
+        <input class="input input--lg" id="calcMonto" type="text" inputmode="numeric" autocomplete="off"
+               placeholder="$ 25.000.000" aria-describedby="calcFuente">
+      </div>
+
+      <div class="field">
+        <span class="field__label" id="labelActividad">Actividad</span>
+        <div class="toggle-group" role="group" aria-labelledby="labelActividad">
+          <button class="toggle" type="button" data-actividad="servicios" aria-pressed="true">Servicios</button>
+          <button class="toggle" type="button" data-actividad="bienes" aria-pressed="false">Venta de bienes</button>
         </div>
-    </nav>
+      </div>
 
-    <!-- ===== HERO ===== -->
-    <section id="inicio" class="hero-section">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <div class="hero-badge-wrap">
-                            <span class="hero-badge">Contadora Pública Nacional</span>
-                            <span class="hero-badge-free">Primera consulta sin cargo</span>
-                        </div>
-                        <h1 class="hero-title">Daniela Magalí Bava</h1>
-                        <p class="hero-subtitle">Experiencia corporativa al servicio de tu negocio</p>
-                        <p class="hero-description">
-                            Soluciones contables, impositivas y estratégicas para profesionales, emprendedores y empresas. Precisión técnica con enfoque en resultados.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20coordinar%20una%20consulta%20sin%20cargo"
-                               class="btn btn-whatsapp-hero btn-lg" target="_blank" rel="noopener"
-                               onclick="trackEvent('whatsapp_hero')">
-                                <i class="bi bi-whatsapp me-2"></i>Consulta Gratis por WhatsApp
-                            </a>
-                            <a href="#servicios" class="btn btn-outline-primary btn-lg">
-                                Ver Servicios <i class="bi bi-arrow-down ms-2"></i>
-                            </a>
-                        </div>
-                        <div class="hero-stats mt-5">
-                            <div class="row g-3">
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <i class="bi bi-briefcase-fill"></i>
-                                        <h3>Exp. Corporativa</h3>
-                                        <p>INTeA · INTA</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <i class="bi bi-award-fill"></i>
-                                        <h3>Pericia Judicial</h3>
-                                        <p>PJN y CABA</p>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <i class="bi bi-shield-check"></i>
-                                        <h3>Atención</h3>
-                                        <p>Personalizada</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                    <div class="hero-visual">
-                        <div class="hero-card-float card-1">
-                            <i class="bi bi-file-earmark-check-fill"></i>
-                            <span>Balances y DDJJ</span>
-                        </div>
-                        <div class="hero-card-float card-2">
-                            <i class="bi bi-graph-up-arrow"></i>
-                            <span>Planificación Fiscal</span>
-                        </div>
-                        <div class="hero-card-float card-3">
-                            <i class="bi bi-building-fill"></i>
-                            <span>ARCA / Monotributo</span>
-                        </div>
-                        <div class="hero-center-circle">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <span>CPN</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <p class="calc-error" id="calcError" hidden></p>
+
+      <div class="calc-result" id="calcResultado" aria-live="polite" hidden>
+        <dl class="calc-dl">
+          <div class="calc-row"><dt>Categoría estimada</dt><dd class="calc-cat" id="calcCategoria">—</dd></div>
+          <div class="calc-row"><dt>Cuota mensual</dt><dd id="calcCuota">—</dd></div>
+          <div class="calc-row"><dt>Margen hasta el tope</dt><dd id="calcMargen">—</dd></div>
+        </dl>
+        <p class="calc-note" id="calcNota"></p>
+        <a class="btn btn--primary btn--block" id="calcWa" href="https://wa.me/5491128276362"
+           target="_blank" rel="noopener noreferrer" data-cta="calculadora">Revisar mi situación con Daniela</a>
+      </div>
+
+      <span class="calc-source" id="calcFuente" data-vigencia>Fuente: ARCA · escala vigente desde 01/08/2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE MÍ ===== -->
+<section id="sobre-mi" class="section">
+  <div class="about">
+    <figure class="about__figure">
+      <div class="frame">
+        <img src="/img/daniela-bava.webp" width="1024" height="1536" loading="lazy" decoding="async"
+             alt="Daniela Magalí Bava, Contadora Pública Nacional matriculada en el CPCECABA">
+      </div>
+      <figcaption class="about__badge">CPN · CPCECABA</figcaption>
+    </figure>
+
+    <div class="about__body">
+      <span class="overline">Sobre mí</span>
+      <h2 class="section-title">Daniela Magalí Bava</h2>
+      <p>Como Jefa Contadora en INTeA — Innovaciones Tecnológicas Agropecuarias, empresa de capitales mixtos asociada al INTA — lideré balances complejos, equipos contables y decisiones financieras estratégicas. Ese estándar corporativo es el que aplico hoy en cada PyME y empresa que asesoro.</p>
+
+      <ul class="checks">
+        <li>Estados contables con estándar corporativo</li>
+        <li>Ganancias y Bienes Personales optimizados legalmente</li>
+        <li>Pericia judicial en el PJN y CABA</li>
+        <li>Atención directa: hablás conmigo, siempre</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn btn--primary btn--sm"
+           href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20agendar%2020%20minutos%20sin%20cargo"
+           target="_blank" rel="noopener noreferrer"
+           data-calendly data-calendly-label="Agendar 20 min sin cargo" data-cta="sobre_mi">Agendar 20 min sin cargo</a>
+        <a class="btn btn--ghost btn--sm"
+           href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20coordinar%20una%20consulta"
+           target="_blank" rel="noopener noreferrer" data-cta="sobre_mi">Escribime por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section id="testimonios" class="section">
+  <h2 class="section-title" style="margin-bottom:32px">Empresas que ya trabajan conmigo</h2>
+  <div class="grid grid--cards-sm">
+    <figure class="card quote">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="visually-hidden">5 de 5 estrellas</span>
+      <blockquote>“Daniela ordenó toda la parte impositiva de la empresa. Profesional, clara y siempre disponible. El cierre de balance dejó de ser un problema.”</blockquote>
+      <figcaption><div class="who">Martín R.</div><div class="role">PyME · Construcción</div></figcaption>
+    </figure>
+
+    <figure class="card quote">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="visually-hidden">5 de 5 estrellas</span>
+      <blockquote>“Manejaba mi Ganancias y Bienes Personales con otro estudio y pagaba de más. Con Daniela tengo planificación de verdad y cero sorpresas.”</blockquote>
+      <figcaption><div class="who">Ing. Pablo S.</div><div class="role">Director de SA</div></figcaption>
+    </figure>
+
+    <figure class="card quote">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="visually-hidden">5 de 5 estrellas</span>
+      <blockquote>“Su pericia contable fue clave para el resultado del juicio. La experiencia en el PJN se nota en la solidez de los informes.”</blockquote>
+      <figcaption><div class="who">Dr. Carlos B.</div><div class="role">Abogado · Estudio jurídico</div></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="section section--alt">
+  <div class="section--narrow" style="display:flex;flex-direction:column;gap:26px">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 style="margin:0;font-size:inherit;font-weight:inherit">
+          <button class="faq-q" type="button" aria-expanded="true" aria-controls="faq1" data-q="tipo_de_empresas">
+            ¿Con qué tipo de empresas trabajás?<span class="icon" aria-hidden="true">−</span>
+          </button>
+        </h3>
+        <p class="faq-a" id="faq1">Principalmente PyMEs y sociedades (SRL, SA, SAS) de todos los rubros, además de directores, accionistas y profesionales con patrimonio que necesitan Ganancias y Bienes Personales bien resueltos. Mi experiencia como Jefa Contadora en INTeA me permite manejar estructuras contables complejas.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 style="margin:0;font-size:inherit;font-weight:inherit">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq2" data-q="cierre_de_balance">
+            ¿Cómo es el proceso de cierre de balance?<span class="icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <p class="faq-a" id="faq2" hidden>Primero relevamos la documentación y el estado de los registros. Después armo los estados contables completos, con análisis de ratios e informe para la dirección. Trabajo con fechas pautadas de antemano para que llegues a las presentaciones sin correr.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 style="margin:0;font-size:inherit;font-weight:inherit">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq3" data-q="ganancias_personas_humanas">
+            ¿Hacés Ganancias de personas humanas y Bienes Personales?<span class="icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <p class="faq-a" id="faq3" hidden>Sí. Es uno de los ejes del estudio: DDJJ de Ganancias y Bienes Personales para directores, accionistas y profesionales, con planificación para pagar lo justo dentro de la ley.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 style="margin:0;font-size:inherit;font-weight:inherit">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq4" data-q="primera_consulta">
+            ¿La primera consulta tiene costo?<span class="icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <p class="faq-a" id="faq4" hidden>No. La primera consulta es sin cargo: revisamos tu situación y te digo con claridad qué necesitás y qué no.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 style="margin:0;font-size:inherit;font-weight:inherit">
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq5" data-q="monotributistas">
+            ¿Atendés monotributistas?<span class="icon" aria-hidden="true">+</span>
+          </button>
+        </h3>
+        <p class="faq-a" id="faq5" hidden>Sí, como servicio adicional: alta, recategorización y facturación al día. El foco del estudio está en empresas, pero muchos clientes empezaron como monotributistas y crecieron con el estudio.</p>
+      </div>
+    </div>
+
+    <a class="btn btn--ghost" style="align-self:center"
+       href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20tengo%20una%20consulta"
+       target="_blank" rel="noopener noreferrer" data-cta="faq">¿Otra duda? Escribime directamente</a>
+  </div>
+</section>
+
+<!-- ===== NOTAS ===== -->
+<section id="notas" class="section">
+  <div class="section-head">
+    <h2 class="section-title">Notas y actualidad fiscal</h2>
+    <a class="overline" href="/notas/">Ver todas →</a>
+  </div>
+
+  <div class="grid grid--cards-sm">
+    <article class="card note-card">
+      <div class="note-card__thumb" aria-hidden="true"><span>monotributo</span></div>
+      <div class="note-card__body">
+        <span class="note-card__meta">Monotributo · Ago 2026</span>
+        <h3 class="note-card__title"><a href="/notas/recategorizacion-monotributo-agosto-2026/">Recategorización: qué mirar antes de que venza el plazo</a></h3>
+        <p class="note-card__text">La nueva escala rige desde el 1/8. Cómo revisar tus últimos 12 meses y evitar quedar mal categorizado.</p>
+        <span class="note-card__more" aria-hidden="true">Leer nota →</span>
+      </div>
+    </article>
+
+    <article class="card note-card">
+      <div class="note-card__thumb" aria-hidden="true"><span>bienes personales</span></div>
+      <div class="note-card__body">
+        <span class="note-card__meta">Bienes Personales · Jul 2026</span>
+        <h3 class="note-card__title"><a href="/notas/bienes-personales-como-anticiparse/">Bienes Personales: cómo anticiparse y no pagar de más</a></h3>
+        <p class="note-card__text">Valuaciones, mínimos y decisiones que conviene tomar antes del 31 de diciembre, no después.</p>
+        <span class="note-card__more" aria-hidden="true">Leer nota →</span>
+      </div>
+    </article>
+
+    <article class="card note-card">
+      <div class="note-card__thumb" aria-hidden="true"><span>pymes</span></div>
+      <div class="note-card__body">
+        <span class="note-card__meta">PyMEs · Jun 2026</span>
+        <h3 class="note-card__title"><a href="/notas/cierre-de-balance-checklist-pymes/">Cierre de balance sin sobresaltos: checklist para PyMEs</a></h3>
+        <p class="note-card__text">Los 8 puntos que reviso antes de cada cierre para que el balance salga a tiempo y sin ajustes de último minuto.</p>
+        <span class="note-card__more" aria-hidden="true">Leer nota →</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" class="section section--alt">
+  <div class="grid grid--split">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span class="overline">Contacto</span>
+      <h2 class="section-title">Consultá sin compromiso</h2>
+      <p class="lead">Primera consulta sin cargo. Respuesta en menos de 24 horas hábiles.</p>
+
+      <div class="contact-list">
+        <a class="contact-row" href="https://wa.me/5491128276362" target="_blank" rel="noopener noreferrer" data-cta="contacto">
+          <span class="key">WhatsApp</span><span class="val">+54 9 11 2827-6362</span>
+        </a>
+        <a class="contact-row" href="mailto:danielambava@gmail.com" data-cta="contacto">
+          <span class="key">Email</span><span class="val">danielambava@gmail.com</span>
+        </a>
+        <a class="contact-row"
+           href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20agendar%20una%20reuni%C3%B3n%20de%2020%20minutos"
+           target="_blank" rel="noopener noreferrer"
+           data-calendly data-calendly-label="Agendar 20 min por Calendly" data-cta="contacto">
+          <span class="key">Reunión</span><span class="val">Coordinar 20 min por WhatsApp</span>
+        </a>
+        <div class="contact-row">
+          <span class="key">Horario</span><span class="val--muted">Lunes a viernes · 9 a 18 hs</span>
         </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="#F5F5F7"/>
-            </svg>
+      </div>
+    </div>
+
+    <form class="form-panel" id="contactForm" novalidate>
+      <span class="form-panel__title">Contame tu situación</span>
+
+      <div class="form-grid">
+        <div>
+          <label class="visually-hidden" for="nombre">Nombre y empresa</label>
+          <input class="input" id="nombre" name="nombre" type="text" placeholder="Nombre y empresa" autocomplete="name" required>
         </div>
-    </section>
-
-    <!-- ===== SERVICIOS ===== -->
-    <section id="servicios" class="services-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-badge">Soluciones Integrales</span>
-                <h2 class="section-title">Servicios Contables e Impositivos</h2>
-                <p class="section-description">Servicios profesionales adaptados a cada cliente, con experiencia corporativa de alto nivel</p>
-            </div>
-
-            <div class="row g-4">
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-file-earmark-bar-graph"></i></div>
-                        <h3 class="service-title">Armado de Balances Empresariales</h3>
-                        <p class="service-description">Estados contables mensuales, trimestrales y anuales con precisión corporativa.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Estados contables completos</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Análisis de ratios financieros</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Informes gerenciales</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20el%20servicio%20de%20Balances%20Empresariales"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_balances')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-receipt"></i></div>
-                        <h3 class="service-title">Declaración Jurada de Ganancias</h3>
-                        <p class="service-description">DJ de ganancias para personas humanas y jurídicas, optimizando la carga tributaria legalmente.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Personas humanas</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Sociedades</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Planificación fiscal</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Declaraci%C3%B3n%20Jurada%20de%20Ganancias"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_ganancias')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-building"></i></div>
-                        <h3 class="service-title">Alta de Servicios en ARCA</h3>
-                        <p class="service-description">Gestión completa en ARCA (ex-AFIP). Monotributo, responsable inscripto y regímenes especiales.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Inscripción monotributo</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Alta responsable inscripto</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Cambios de categoría</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20el%20servicio%20de%20Alta%20en%20ARCA"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_arca')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-clipboard-data"></i></div>
-                        <h3 class="service-title">Asesoramiento Impositivo</h3>
-                        <p class="service-description">Consultoría estratégica para cumplir todas las obligaciones fiscales de manera eficiente.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Planificación tributaria</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Defensa ante fiscalizaciones</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Régimen de información</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20el%20Asesoramiento%20Impositivo"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_asesoramiento')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-graph-up"></i></div>
-                        <h3 class="service-title">Planificación Tributaria</h3>
-                        <p class="service-description">Estrategias para reducir la carga fiscal legalmente, analizando la situación patrimonial completa.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Análisis de estructura fiscal</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Optimización impositiva</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Proyecciones tributarias</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Planificaci%C3%B3n%20Tributaria"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_planificacion')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-search"></i></div>
-                        <h3 class="service-title">Auditoría Contable</h3>
-                        <p class="service-description">Revisión exhaustiva de registros y procedimientos para garantizar transparencia y confiabilidad.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Auditoría externa</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Due diligence</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Control de gestión</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20el%20servicio%20de%20Auditor%C3%ADa%20Contable"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_auditoria')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-file-earmark-text"></i></div>
-                        <h3 class="service-title">Gestión de Facturación Electrónica</h3>
-                        <p class="service-description">Administración completa del sistema de facturación, libros IVA digital y normativa ARCA.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Facturación electrónica</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Libros IVA digital</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Liquidaciones mensuales</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Gesti%C3%B3n%20de%20Facturaci%C3%B3n%20Electr%C3%B3nica"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_facturacion')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-piggy-bank"></i></div>
-                        <h3 class="service-title">Asesoramiento en Inversiones y Capital</h3>
-                        <p class="service-description">Consultoría financiera para decisiones de inversión y gestión del capital de trabajo.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Evaluación de proyectos</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Análisis de viabilidad</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Gestión financiera</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20el%20Asesoramiento%20en%20Inversiones"
-                           class="btn-service-wa" target="_blank" onclick="trackEvent('whatsapp_inversiones')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card service-card-featured">
-                        <div class="service-badge"><i class="bi bi-award-fill"></i> Experiencia en PJN</div>
-                        <div class="service-icon"><i class="bi bi-journal-text"></i></div>
-                        <h3 class="service-title">Pericia Contable de Parte</h3>
-                        <p class="service-description">Experiencia como perito contable en el Poder Judicial de la Nación y CABA.</p>
-                        <ul class="service-features">
-                            <li><i class="bi bi-check-circle-fill"></i> Pericia judicial (PJN y CABA)</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Perito de parte</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Informes técnicos</li>
-                        </ul>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20la%20Pericia%20Contable%20de%20Parte"
-                           class="btn-service-wa featured" target="_blank" onclick="trackEvent('whatsapp_pericia')">
-                            <i class="bi bi-whatsapp me-2"></i>Consultar este servicio
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Para quién trabajo -->
-            <div class="clients-section mt-5 pt-5">
-                <div class="text-center mb-4">
-                    <h3 class="clients-title">¿Para quién trabajo?</h3>
-                    <p class="clients-subtitle">Soluciones adaptadas a cada tipo de cliente</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="client-type-card">
-                            <i class="bi bi-person-badge"></i>
-                            <h4>Profesionales</h4>
-                            <p>Médicos, abogados, arquitectos y otros profesionales independientes</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="client-type-card">
-                            <i class="bi bi-shop"></i>
-                            <h4>Emprendedores</h4>
-                            <p>Nuevos negocios y startups en crecimiento</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="client-type-card">
-                            <i class="bi bi-building-fill"></i>
-                            <h4>PyMEs</h4>
-                            <p>Pequeñas y medianas empresas de todos los rubros</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="client-type-card">
-                            <i class="bi bi-globe"></i>
-                            <h4>Grandes Empresas</h4>
-                            <p>Corporaciones con necesidades contables complejas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <label class="visually-hidden" for="servicio">Servicio de interés</label>
+          <select class="select" id="servicio" name="servicio">
+            <option value="">Servicio de interés…</option>
+            <option>Balances y estados contables</option>
+            <option>Ganancias — Sociedades</option>
+            <option>Ganancias y Bienes Personales — Personas humanas</option>
+            <option>Planificación fiscal</option>
+            <option>Auditoría contable</option>
+            <option>Pericia contable de parte</option>
+            <option>Monotributo / autónomos</option>
+            <option>Otro / no sé cuál necesito</option>
+          </select>
         </div>
-    </section>
+      </div>
 
-    <!-- ===== SOBRE MÍ ===== -->
-    <section id="sobre-mi" class="about-section py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="about-image-wrapper">
-                        <img src="img/daniela-bava.webp"
-                             alt="Daniela Magalí Bava - Contadora Pública Nacional"
-                             class="about-photo">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="about-content">
-                        <span class="section-badge">Sobre Mí</span>
-                        <h2 class="section-title mb-3">Daniela Magalí Bava</h2>
-                        <p class="about-subtitle">Contadora Pública Nacional</p>
-                        <p class="about-text">
-                            Con sólida formación académica y amplia experiencia corporativa, me especializo en brindar soluciones contables e impositivas de alta calidad, combinando precisión técnica con un enfoque estratégico orientado a resultados.
-                        </p>
-                        <div class="experience-highlight mb-4">
-                            <div class="experience-icon"><i class="bi bi-building-gear"></i></div>
-                            <div class="experience-content">
-                                <h4>Jefa Contadora en INTeA</h4>
-                                <p class="mb-1"><strong>INTeA — Innovaciones Tecnológicas Agropecuarias (INTA)</strong></p>
-                                <p>Empresa de capitales mixtos asociada al INTA. Lideré la gestión integral de balances complejos, supervisión de equipos contables y decisiones estratégicas financieras.</p>
-                            </div>
-                        </div>
-                        <div class="about-features">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Experiencia corporativa de alto nivel</span></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Enfoque en resultados medibles</span></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Actualización normativa constante</span></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="feature-item"><i class="bi bi-check-circle-fill"></i><span>Atención personalizada y directa</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="about-cta mt-4 d-flex gap-3 flex-wrap">
-                            <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20coordinar%20una%20consulta"
-                               class="btn btn-whatsapp-custom btn-lg" target="_blank" onclick="trackEvent('whatsapp_sobre_mi')">
-                                <i class="bi bi-whatsapp me-2"></i>Agendar Consulta
-                            </a>
-                            <a href="#contacto" class="btn btn-outline-primary btn-lg">
-                                <i class="bi bi-envelope me-2"></i>Enviar mensaje
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <label class="visually-hidden" for="mensaje">Tu consulta</label>
+      <textarea class="textarea" id="mensaje" name="mensaje" rows="4" placeholder="Contame brevemente tu consulta…" required></textarea>
 
-    <!-- ===== FAQ ===== -->
-    <section id="faq" class="faq-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-badge">Preguntas Frecuentes</span>
-                <h2 class="section-title">¿Tenés dudas?</h2>
-                <p class="section-description">Las consultas más comunes antes de empezar</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
+      <!-- Honeypot anti-spam: si un bot lo completa, el envío se descarta -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="website">No completar</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
 
-                        <div class="accordion-item faq-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    <i class="bi bi-question-circle-fill me-3"></i>¿La primera consulta tiene costo?
-                                </button>
-                            </h3>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body faq-body">
-                                    No. La primera consulta es <strong>sin cargo</strong>. Podés contactarme por WhatsApp o completar el formulario para coordinar una reunión y evaluar juntos qué servicio se adapta mejor a tu situación.
-                                </div>
-                            </div>
-                        </div>
+      <button class="btn btn--primary" type="submit" data-cta="contact_form">Enviar por WhatsApp</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+      <span class="form-note">Se abre WhatsApp con tu mensaje ya escrito — sin formularios que nadie lee.</span>
+    </form>
+  </div>
+</section>
 
-                        <div class="accordion-item faq-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    <i class="bi bi-question-circle-fill me-3"></i>¿Trabajan con monotributistas y autónomos?
-                                </button>
-                            </h3>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body faq-body">
-                                    Sí. Brindo servicios para <strong>monotributistas, autónomos, profesionales independientes y emprendedores</strong> de todos los rubros: médicos, abogados, diseñadores, consultores, comerciantes y más.
-                                </div>
-                            </div>
-                        </div>
+</main>
 
-                        <div class="accordion-item faq-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    <i class="bi bi-question-circle-fill me-3"></i>¿Qué es una pericia contable de parte?
-                                </button>
-                            </h3>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body faq-body">
-                                    Es un <strong>informe técnico contable</strong> elaborado por un contador designado por una de las partes en un proceso judicial. Cuento con experiencia en el Poder Judicial de la Nación (PJN) y CABA para brindar este servicio especializado.
-                                </div>
-                            </div>
-                        </div>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div>
+    <span class="footer__brand">DMB<span class="dot">.</span>estudio</span>
+    <div class="footer__meta">Daniela Magalí Bava · Contadora Pública Nacional · Buenos Aires</div>
+  </div>
+  <div class="footer__links">
+    <a href="/calculadora-monotributo/">Calculadora de monotributo</a>
+    <a href="/notas/">Notas</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div class="footer__copy">© 2026 DM Bava Estudio Contable</div>
+</footer>
 
-                        <div class="accordion-item faq-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                    <i class="bi bi-question-circle-fill me-3"></i>¿Atienden a empresas y PyMEs?
-                                </button>
-                            </h3>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body faq-body">
-                                    Sí. Mi experiencia como Jefa Contadora en INTeA (empresa de capitales mixtos asociada al INTA) me permite manejar <strong>estructuras contables complejas</strong> de cualquier tamaño, desde PyMEs hasta grandes corporaciones.
-                                </div>
-                            </div>
-                        </div>
+<!-- ===== WhatsApp flotante ===== -->
+<a class="wa-float"
+   href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20consultar%20sobre%20servicios%20contables"
+   target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" data-cta="float">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.18 4.22-9.4 9.42-9.4a9.35 9.35 0 0 1 6.65 2.76 9.32 9.32 0 0 1 2.76 6.65c0 5.18-4.23 9.41-9.42 9.41M20.4 3.65A11.7 11.7 0 0 0 12.04 .2C5.57.2.31 5.46.3 11.93c0 2.07.54 4.09 1.57 5.87L.2 23.8l6.14-1.61a11.7 11.7 0 0 0 5.7 1.45h.01c6.47 0 11.73-5.26 11.74-11.73a11.66 11.66 0 0 0-3.44-8.3"/></svg>
+</a>
 
-                        <div class="accordion-item faq-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                    <i class="bi bi-question-circle-fill me-3"></i>¿Cómo es el proceso para empezar?
-                                </button>
-                            </h3>
-                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body faq-body">
-                                    Muy simple: <strong>1)</strong> Me contactás por WhatsApp o formulario. <strong>2)</strong> Coordinamos una primera reunión gratuita para entender tu situación. <strong>3)</strong> Te presento una propuesta personalizada. <strong>4)</strong> Empezamos a trabajar juntos.
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="text-center mt-5">
-                        <p class="faq-cta-text">¿No encontrás tu pregunta?</p>
-                        <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20tengo%20una%20consulta"
-                           class="btn btn-whatsapp-custom btn-lg" target="_blank" onclick="trackEvent('whatsapp_faq')">
-                            <i class="bi bi-whatsapp me-2"></i>Escribime directamente
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TESTIMONIOS ===== -->
-    <section id="testimonios" class="testimonials-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-badge">Clientes</span>
-                <h2 class="section-title">Lo que dicen quienes trabajan conmigo</h2>
-                <p class="section-description">Profesionales y empresas que confían en DM Bava Estudio Contable</p>
-            </div>
-            <div class="row g-4">
-
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                        <p class="testimonial-text">"Daniela nos ayudó a ordenar toda la parte impositiva de nuestra empresa. Muy profesional, clara y siempre disponible para consultas. Totalmente recomendable."</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar"><i class="bi bi-person-fill"></i></div>
-                            <div>
-                                <h5 class="testimonial-name">Martín R.</h5>
-                                <p class="testimonial-role">PyME — Rubro Construcción</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="testimonial-card testimonial-featured">
-                        <div class="testimonial-stars">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                        <p class="testimonial-text">"Como médica independiente necesitaba a alguien que entienda mi situación. Daniela maneja todo lo de ARCA y ganancias con una precisión y dedicación increíble."</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar"><i class="bi bi-person-fill"></i></div>
-                            <div>
-                                <h5 class="testimonial-name">Dra. Laura M.</h5>
-                                <p class="testimonial-role">Médica Independiente</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars">
-                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                        <p class="testimonial-text">"Excelente trabajo en la pericia contable para nuestro juicio. Su experiencia en el PJN fue clave para el resultado favorable. Muy recomendada."</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar"><i class="bi bi-person-fill"></i></div>
-                            <div>
-                                <h5 class="testimonial-name">Lic. Carlos B.</h5>
-                                <p class="testimonial-role">Abogado — Estudio Jurídico</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Indicadores de confianza -->
-            <div class="trust-bar mt-5 pt-4">
-                <div class="row g-4 text-center">
-                    <div class="col-6 col-md-3">
-                        <div class="trust-item">
-                            <i class="bi bi-award-fill"></i>
-                            <h4>Matrícula CPCECABA</h4>
-                            <p>Contadora Pública habilitada</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="trust-item">
-                            <i class="bi bi-building-fill"></i>
-                            <h4>Exp. Corporativa</h4>
-                            <p>Jefa Contadora en INTeA–INTA</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="trust-item">
-                            <i class="bi bi-file-earmark-text-fill"></i>
-                            <h4>Pericia Judicial</h4>
-                            <p>PJN y Poder Judicial CABA</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <div class="trust-item">
-                            <i class="bi bi-chat-dots-fill"></i>
-                            <h4>Primera consulta</h4>
-                            <p>100% sin cargo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="contact-section py-5">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-badge">Contacto</span>
-                <h2 class="section-title">Consultá sin compromiso</h2>
-                <p class="section-description">Primera consulta sin cargo · Respuesta en menos de 24hs</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="contact-info">
-                        <h3 class="contact-info-title">Medios de Contacto</h3>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
-                            <div class="contact-details">
-                                <h4>WhatsApp</h4>
-                                <a href="https://wa.me/5491128276362" target="_blank">+54 9 11 2827-6362</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:danielambava@gmail.com">danielambava@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="bi bi-clock"></i></div>
-                            <div class="contact-details">
-                                <h4>Horario de Atención</h4>
-                                <p>Lunes a Viernes<br>9:00 - 18:00 hs</p>
-                            </div>
-                        </div>
-                        <div class="contact-cta mt-4">
-                            <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20consultar%20sobre%20servicios%20contables"
-                               class="btn btn-whatsapp btn-lg w-100" target="_blank" onclick="trackEvent('whatsapp_contacto')">
-                                <i class="bi bi-whatsapp me-2"></i>Escribir por WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="contact-form-wrapper">
-                        <form id="contactForm" class="contact-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="name" class="form-label">Nombre completo *</label>
-                                    <input type="text" class="form-control" id="name" name="from_name" required placeholder="Tu nombre">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">Email *</label>
-                                    <input type="email" class="form-control" id="email" name="from_email" required placeholder="tu@email.com">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="phone" class="form-label">Teléfono / WhatsApp</label>
-                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="11 1234-5678">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="service" class="form-label">Servicio de interés *</label>
-                                    <select class="form-select" id="service" name="service" required>
-                                        <option value="">Seleccionar...</option>
-                                        <option value="Balances Empresariales">Balances Empresariales</option>
-                                        <option value="Declaración Jurada de Ganancias">Declaración Jurada de Ganancias</option>
-                                        <option value="Alta en ARCA / Monotributo">Alta en ARCA / Monotributo</option>
-                                        <option value="Asesoramiento Impositivo">Asesoramiento Impositivo</option>
-                                        <option value="Planificación Tributaria">Planificación Tributaria</option>
-                                        <option value="Auditoría Contable">Auditoría Contable</option>
-                                        <option value="Facturación Electrónica">Facturación Electrónica</option>
-                                        <option value="Asesoramiento en Inversiones">Asesoramiento en Inversiones</option>
-                                        <option value="Pericia Contable de Parte">Pericia Contable de Parte</option>
-                                        <option value="Otro / No sé cuál necesito">Otro / No sé cuál necesito</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="message" class="form-label">¿En qué puedo ayudarte? *</label>
-                                    <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Contame brevemente tu situación o consulta..."></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary-custom btn-lg w-100" id="submitBtn">
-                                        <span id="btnText"><i class="bi bi-send me-2"></i>Enviar Consulta</span>
-                                        <span id="btnLoader" class="d-none"><span class="spinner-border spinner-border-sm me-2"></span>Enviando...</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        <div id="formMessage" class="mt-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <div class="footer-brand mb-2">
-                        <span class="brand-text">DM Bava</span>
-                        <span class="brand-subtitle">Estudio Contable</span>
-                    </div>
-                    <p class="footer-text mb-0">Contadora Pública Nacional · Buenos Aires, Argentina</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-contact">
-                        <a href="mailto:danielambava@gmail.com" class="footer-link">
-                            <i class="bi bi-envelope me-2"></i>danielambava@gmail.com
-                        </a>
-                        <a href="https://wa.me/5491128276362" class="footer-link" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i>+54 9 11 2827-6362
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <hr class="footer-divider my-3">
-            <div class="text-center">
-                <p class="footer-copyright mb-0">&copy; <span id="currentYear">2025</span> DM Bava Estudio Contable. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Flotante -->
-    <a href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20me%20interesa%20consultar%20sobre%20servicios%20contables"
-       class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp"
-       onclick="trackEvent('whatsapp_float')">
-        <i class="bi bi-whatsapp"></i>
-        <span class="whatsapp-tooltip-text">¡Hablemos!</span>
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+<script src="/js/main.js" defer></script>
+<script src="/js/calculadora.js" defer></script>
 </body>
 </html>
