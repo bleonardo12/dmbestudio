@@ -86,6 +86,18 @@ todos los CTAs de "Agendar reunión" abren WhatsApp. Al cargar la URL real, esos
 mismos botones pasan a abrir Calendly y a emitir el evento `calendly_open` — no
 hay que tocar el HTML.
 
+### Al tocar CSS o JS: bumpear la versión
+
+Los assets se sirven con cache larga en nginx, así que las referencias del HTML
+llevan un query string de versión: `/css/styles.css?v=20260811`. **Después de
+editar `css/styles.css`, `js/main.js` o `js/calculadora.js` hay que reemplazar
+ese valor en todos los `.html`**, si no los visitantes recurrentes siguen viendo
+la versión cacheada:
+
+```bash
+grep -rl 'v=20260811' --include='*.html' . | xargs sed -i 's/v=20260811/v=AAAAMMDD/g'
+```
+
 ### Cambiar el número de WhatsApp
 
 Está en `SITE_CONFIG.whatsapp` ([js/main.js](js/main.js)) para lo que genera el
