@@ -56,13 +56,39 @@ dmbestudio/
 
 ## Deploy
 
-Automático: **push a `main` → GitHub Actions → SSH al VPS → `git checkout -B main origin/main`
-+ `git reset --hard origin/main`** en `/var/www/dmbestudio`. No hay build ni paso manual.
+Automático: **push a `main` → GitHub Actions → `ssh deploy@vps`**. No hay build
+ni paso manual.
+
+El workflow no manda ningún script. La clave del usuario `deploy` lleva el
+comando forzado en `authorized_keys`, así que la conexión ejecuta siempre
+[vps/deploy-dmbestudio.sh](vps/deploy-dmbestudio.sh) (instalado en el servidor
+como `/usr/local/bin/deploy-dmbestudio`) y nada más. Ese script hace
+`git fetch` + `git checkout -B main origin/main` + `git reset --hard`.
 
 El `checkout -B` fuerza que el working tree del VPS quede siempre **en `main`**:
 antes quedaba apuntado a una rama vieja y sólo funcionaba de casualidad, porque
 el `reset --hard` la reescribía en cada deploy. El workflow además tiene un
 `concurrency` group, así que dos pushes seguidos no pisan el mismo directorio.
+
+### Desplegar a mano
+
+Si Actions falla, alcanza con conectarse: el comando forzado hace el resto.
+
+```bash
+ssh -p 2222 deploy@srv777726.hstgr.cloud
+```
+
+### Por qué `deploy` y no `root`
+
+Hasta el 22/08/2026 el deploy entraba como `root`, así que un compromiso de
+`DEPLOY_KEY` equivalía a root sobre el servidor entero, donde conviven otros
+seis sitios. Ahora la clave sólo puede ejecutar el deploy de este repositorio:
+`ssh deploy@host "whoami"` ignora el comando y despliega igual, y el usuario no
+puede escribir fuera de `/var/www/dmbestudio` ni leer `/root`.
+
+> **Queda pendiente lo mismo en los otros proyectos.** Las claves de deploy de
+> `beristainAsociados` y `soberanacrea` siguen en el `authorized_keys` de root
+> del mismo VPS, con el mismo alcance que tenía esta.
 
 ```bash
 git add -A && git commit -m "…" && git push
