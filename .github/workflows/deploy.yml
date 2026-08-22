@@ -41,33 +41,23 @@ jobs:
           echo "❌ El VPS no respondió al ssh-keyscan tras 5 intentos."
           exit 1
 
+      # El usuario `deploy` no tiene privilegios y su clave lleva el comando
+      # forzado desde authorized_keys:
+      #   command="/usr/local/bin/deploy-dmbestudio"
+      # Por eso acá no se manda ningún script: cualquier comando que se enviara
+      # sería ignorado. Aunque DEPLOY_KEY se filtre, lo único que un atacante
+      # puede hacer es desplegar el repositorio público del sitio.
+      # (auditoría X-03; antes esto entraba como root)
       - name: Deploy al VPS
-        run: |
-          ssh -p 2222 root@srv777726.hstgr.cloud << 'ENDSSH'
-            set -e
-            echo "📦 Iniciando deploy dmbestudio..."
-
-            if [ -d "/var/www/dmbestudio/.git" ]; then
-              echo "🔄 Repo encontrado, actualizando..."
-              cd /var/www/dmbestudio
-              git fetch origin main
-              # -B fuerza que el working tree quede EN main, no en la rama que
-              # hubiera quedado apuntada de antes (auditoría A-01).
-              git checkout -B main origin/main
-              git reset --hard origin/main
-            else
-              echo "📥 Clonando repo..."
-              rm -rf /var/www/dmbestudio
-              git clone --branch main https://github.com/bleonardo12/dmbestudio.git /var/www/dmbestudio
-              cd /var/www/dmbestudio
-            fi
-
-            echo "✅ Rama y último commit:"
-            git rev-parse --abbrev-ref HEAD
-            git log -1 --oneline
-            echo "🎉 Deploy completado!"
-          ENDSSH
+        run: ssh -p 2222 deploy@srv777726.hstgr.cloud
 
       - name: Notificar resultado
-        if: success()
-        run: echo "✅ Deploy exitoso a srv777726.hstgr.cloud"
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ Deploy exitoso a srv777726.hstgr.cloud"
+          else
+            echo "❌ El deploy FALLÓ — el sitio quedó en la versión anterior."
+            echo "   Revisá los pasos de arriba. Para desplegar a mano:"
+            echo "   ssh -p 2222 deploy@srv777726.hstgr.cloud"
+          fi

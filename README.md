@@ -45,6 +45,7 @@ dmbestudio/
 ├── fonts/                            # Space Grotesk woff2
 ├── img/                              # Foto + og-image
 ├── nginx/                            # Cabeceras de seguridad para el VPS
+├── vps/deploy-dmbestudio.sh          # Script de deploy con comando forzado (X-03)
 ├── _headers                          # Equivalente para Netlify/Cloudflare
 ├── MEDICION.md                       # Eventos, GTM y conversiones de Ads
 ├── robots.txt · sitemap.xml · manifest.json · favicon.svg
