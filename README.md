@@ -28,6 +28,7 @@ dmbestudio/
 ├── index.html                        # Home (una página con anclas)
 ├── calculadora-monotributo/
 │   └── index.html                    # Página propia de la calculadora (SEO)
+├── privacidad/index.html             # Política de privacidad (requisito de Google Ads)
 ├── notas/                            # Blog indexable
 │   ├── index.html                    # Listado
 │   ├── recategorizacion-monotributo-agosto-2026/
