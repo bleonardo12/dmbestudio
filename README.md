@@ -28,6 +28,9 @@ dmbestudio/
 ├── index.html                        # Home (una página con anclas)
 ├── calculadora-monotributo/
 │   └── index.html                    # Página propia de la calculadora (SEO)
+├── balances/ · contabilidad-pymes/ · conciliacion-de-cuentas/
+│   ganancias-bienes-personales/ · ganancias-sociedades/ · impuestos-empresas/
+│                                     # Landings por servicio, 1:1 con los grupos de Google Ads
 ├── privacidad/index.html             # Política de privacidad (requisito de Google Ads)
 ├── notas/                            # Blog indexable
 │   ├── index.html                    # Listado
