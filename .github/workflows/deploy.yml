@@ -24,10 +24,22 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
+      # ssh-keyscan depende de que el VPS conteste el escaneo justo en ese
+      # momento. Un fallo transitorio acá tiraba abajo el deploy entero
+      # (pasó con eff5c08), así que se reintenta antes de darlo por perdido.
       - name: Registrar Host de Confianza
         run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p 2222 -H srv777726.hstgr.cloud >> ~/.ssh/known_hosts
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          for i in 1 2 3 4 5; do
+            if ssh-keyscan -T 15 -p 2222 -H srv777726.hstgr.cloud >> ~/.ssh/known_hosts 2>/dev/null && [ -s ~/.ssh/known_hosts ]; then
+              echo "✅ Host key registrada (intento $i)"
+              exit 0
+            fi
+            echo "⚠️  ssh-keyscan sin respuesta (intento $i de 5), reintento en 10s..."
+            sleep 10
+          done
+          echo "❌ El VPS no respondió al ssh-keyscan tras 5 intentos."
+          exit 1
 
       - name: Deploy al VPS
         run: |
