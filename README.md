@@ -51,8 +51,13 @@ dmbestudio/
 
 ## Deploy
 
-Automático: **push a `main` → GitHub Actions → SSH al VPS → `git reset --hard origin/main`**
-en `/var/www/dmbestudio`. No hay build ni paso manual.
+Automático: **push a `main` → GitHub Actions → SSH al VPS → `git checkout -B main origin/main`
++ `git reset --hard origin/main`** en `/var/www/dmbestudio`. No hay build ni paso manual.
+
+El `checkout -B` fuerza que el working tree del VPS quede siempre **en `main`**:
+antes quedaba apuntado a una rama vieja y sólo funcionaba de casualidad, porque
+el `reset --hard` la reescribía en cada deploy. El workflow además tiene un
+`concurrency` group, así que dos pushes seguidos no pisan el mismo directorio.
 
 ```bash
 git add -A && git commit -m "…" && git push
@@ -89,13 +94,13 @@ hay que tocar el HTML.
 ### Al tocar CSS o JS: bumpear la versión
 
 Los assets se sirven con cache larga en nginx, así que las referencias del HTML
-llevan un query string de versión: `/css/styles.css?v=20260811`. **Después de
+llevan un query string de versión: `/css/styles.css?v=20260822`. **Después de
 editar `css/styles.css`, `js/main.js` o `js/calculadora.js` hay que reemplazar
 ese valor en todos los `.html`**, si no los visitantes recurrentes siguen viendo
 la versión cacheada:
 
 ```bash
-grep -rl 'v=20260811' --include='*.html' . | xargs sed -i 's/v=20260811/v=AAAAMMDD/g'
+grep -rl 'v=20260822' --include='*.html' . | xargs sed -i 's/v=20260822/v=AAAAMMDD/g'
 ```
 
 ### Cambiar el número de WhatsApp
@@ -132,6 +137,17 @@ Para trackear un CTA nuevo alcanza con agregarle `data-cta="…"` (y
 - Sin `console.log` en producción.
 - CSP, HSTS, `X-Content-Type-Options`, `Referrer-Policy` y `Permissions-Policy`
   en [nginx/security-headers.conf](nginx/security-headers.conf).
+- `/.git`, `/.github`, `/nginx` y los `.md` devuelven 404 desde nginx
+  ([nginx/dmbestudio.conf](nginx/dmbestudio.conf)). Se excluye `/.well-known`
+  para no romper la renovación de Let's Encrypt.
+
+> **El repositorio de GitHub es público.** Mientras lo sea, bloquear `/.git` en
+> nginx es defensa en profundidad, no confidencialidad: el código y todo el
+> historial se leen igual desde GitHub. El commit `585dbc8` dejó en el historial
+> las IDs de EmailJS (`service_sqh0r9p` / `template_nkjdqq9` /
+> `ZVip-2JVyka3hVGj7`); el servicio ya no se usa y conviene **borrarlo desde el
+> panel de EmailJS**, porque con esos tres valores cualquiera puede enviar mails
+> a través de esa cuenta.
 
 ---
 
