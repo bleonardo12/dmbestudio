@@ -622,7 +622,7 @@ a.contact-row:hover { border-color: var(--accent); color: var(--text); }
 .breadcrumb a:hover { color: var(--text); }
 .page-title { font-size: clamp(30px, 4.6vw, 46px); font-weight: 700; letter-spacing: .3px; line-height: 1.1; margin: 0; max-width: 24ch; }
 
-.prose { max-width: 72ch; padding: 24px var(--pad-x) 8px; font-size: 15.5px; line-height: 1.75; color: var(--text-soft); }
+.prose { max-width: calc(68ch + 2 * var(--pad-x)); padding: 24px var(--pad-x) 8px; font-size: 15.5px; line-height: 1.75; color: var(--text-soft); }
 .prose h2 { font-size: 24px; font-weight: 700; letter-spacing: .2px; margin: 40px 0 12px; color: var(--text); }
 .prose h3 { font-size: 18px; font-weight: 600; margin: 28px 0 10px; color: var(--text); }
 .prose p { margin: 0 0 16px; }

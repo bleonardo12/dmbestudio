@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DM Bava Estudio Contable — main.js
+   DMB Estudio Contable — main.js
    Navegación, acordeón FAQ, formulario → WhatsApp y medición (dataLayer/GTM).
    Sin dependencias externas. Sin credenciales de terceros en el cliente.
    ========================================================================== */

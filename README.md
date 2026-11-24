@@ -1,4 +1,4 @@
-# DM Bava Estudio Contable — dmbestudio.com
+# DMB Estudio Contable — dmbestudio.com
 
 Sitio del estudio contable de **Daniela Magalí Bava**, Contadora Pública Nacional
 (CPCECABA, Buenos Aires). Posicionado en **PyMEs y empresas**: balances, Impuesto
@@ -193,4 +193,4 @@ npx serve .        # o python -m http.server 8000
 
 ---
 
-© 2026 DM Bava Estudio Contable
+© 2026 DMB Estudio Contable
