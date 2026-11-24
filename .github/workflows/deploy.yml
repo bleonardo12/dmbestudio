@@ -1,0 +1,63 @@
+name: Deploy al VPS
+
+on:
+  push:
+    branches:
+      - main
+
+# Dos pushes seguidos no deben ejecutar `git reset --hard` en paralelo
+# sobre el mismo directorio del VPS.
+concurrency:
+  group: deploy-produccion
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # No hay checkout: el deploy es un `git fetch` ejecutado dentro del VPS,
+      # así que traer el código al runner no aportaba nada.
+
+      - name: Configurar SSH Agent y Clave
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      # ssh-keyscan depende de que el VPS conteste el escaneo justo en ese
+      # momento. Un fallo transitorio acá tiraba abajo el deploy entero
+      # (pasó con eff5c08), así que se reintenta antes de darlo por perdido.
+      - name: Registrar Host de Confianza
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          for i in 1 2 3 4 5; do
+            if ssh-keyscan -T 15 -p 2222 -H srv777726.hstgr.cloud >> ~/.ssh/known_hosts 2>/dev/null && [ -s ~/.ssh/known_hosts ]; then
+              echo "✅ Host key registrada (intento $i)"
+              exit 0
+            fi
+            echo "⚠️  ssh-keyscan sin respuesta (intento $i de 5), reintento en 10s..."
+            sleep 10
+          done
+          echo "❌ El VPS no respondió al ssh-keyscan tras 5 intentos."
+          exit 1
+
+      # El usuario `deploy` no tiene privilegios y su clave lleva el comando
+      # forzado desde authorized_keys:
+      #   command="/usr/local/bin/deploy-dmbestudio"
+      # Por eso acá no se manda ningún script: cualquier comando que se enviara
+      # sería ignorado. Aunque DEPLOY_KEY se filtre, lo único que un atacante
+      # puede hacer es desplegar el repositorio público del sitio.
+      # (auditoría X-03; antes esto entraba como root)
+      - name: Deploy al VPS
+        run: ssh -p 2222 deploy@srv777726.hstgr.cloud
+
+      - name: Notificar resultado
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ Deploy exitoso a srv777726.hstgr.cloud"
+          else
+            echo "❌ El deploy FALLÓ — el sitio quedó en la versión anterior."
+            echo "   Revisá los pasos de arriba. Para desplegar a mano:"
+            echo "   ssh -p 2222 deploy@srv777726.hstgr.cloud"
+          fi

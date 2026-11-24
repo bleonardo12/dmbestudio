@@ -1,0 +1,22 @@
+{
+  "_comentario": "Escala oficial del Monotributo (ARCA). ACTUALIZAR SEMESTRALMENTE (enero y agosto). Fuente: https://www.arca.gob.ar/monotributo/categorias.asp — al actualizar, cambiar 'vigenciaDesde', 'vigenciaTexto' y las filas de 'categorias'. No hace falta tocar el JS.",
+  "vigenciaDesde": "2026-08-01",
+  "vigenciaTexto": "vigente desde el 01/08/2026",
+  "fuente": "ARCA",
+  "_formatoFilas": "[categoria, topeIngresosBrutosAnuales, cuotaMensualServicios, cuotaMensualVentaDeBienes]",
+  "_notaServicios": "Las categorías I, J y K son exclusivas de venta de bienes muebles. Para prestación de servicios el tope es la categoría H: superarlo implica exclusión del régimen. Los importes de la columna 'servicios' en I/J/K se conservan sólo por integridad de la tabla publicada y no se usan.",
+  "soloVentaDeBienes": ["I", "J", "K"],
+  "categorias": [
+    ["A", 12009410, 49527, 49527],
+    ["B", 17595183, 56379, 56379],
+    ["C", 24670494, 66020, 64531],
+    ["D", 30628651, 84613, 82565],
+    ["E", 36028231, 119811, 108268],
+    ["F", 45151659, 150784, 129931],
+    ["G", 53995799, 230313, 158815],
+    ["H", 81924660, 522707, 317895],
+    ["I", 91699762, 963748, 474993],
+    ["J", 105012519, 1167300, 580794],
+    ["K", 126610839, 1614446, 702103]
+  ]
+}

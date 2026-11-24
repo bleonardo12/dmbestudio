@@ -1,0 +1,21 @@
+{
+  "name": "DM Bava Estudio Contable",
+  "short_name": "DMB.estudio",
+  "description": "Estudio contable para PyMEs y empresas en Buenos Aires: balances, Ganancias y Bienes Personales.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0D0F12",
+  "theme_color": "#0D0F12",
+  "lang": "es-AR",
+  "dir": "ltr",
+  "categories": ["business", "finance"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
