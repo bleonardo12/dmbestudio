@@ -26,25 +26,28 @@
 }
 
 /* ---------- Tokens ---------- */
+/* Tema claro. Todos los colores del sitio salen de acá (y de la copia
+   crítica inline en el <head> de index.html: mantener ambas sincronizadas). */
 :root {
-  --bg: #0D0F12;
-  --bg-alt: #0A0C0F;
-  --surface: #12151A;
-  --border: #22262C;
-  --border-hover: #3A414A;
-  --hairline: #1A1E24;
+  --bg: #FFFFFF;
+  --bg-alt: #F3F6F5;
+  --surface: #FFFFFF;
+  --border: #DDE3E6;
+  --border-hover: #B9C3C9;
+  --hairline: #E8ECEE;
 
-  --text: #EDEFF2;
-  --text-soft: #C6CCD2;
-  --text-muted: #9AA3AD;
-  --text-faint: #8A94A0;
+  --text: #13202B;
+  --text-soft: #2C3A46;
+  --text-muted: #4B5A66;
+  --text-faint: #5F6C78;
 
-  --accent: #6FE3B4;
-  --accent-hover: #9BEECB;
-  --on-accent: #06231A;
+  --accent: #0A7556;
+  --accent-hover: #075E45;
+  --accent-soft: #E4F3EE;
+  --on-accent: #FFFFFF;
   --whatsapp: #25D366;
-  --whatsapp-hover: #2EE070;
-  --danger: #FF8080;
+  --whatsapp-hover: #1EBE5A;
+  --danger: #B42318;
 
   --r-card: 14px;
   --r-input: 10px;
@@ -197,7 +200,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
   align-items: center;
   gap: 16px;
   padding: 16px var(--pad-x);
-  background: rgba(13, 15, 18, .92);
+  background: rgba(255, 255, 255, .94);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
@@ -412,7 +415,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .input--lg { font-size: 16px; padding: 14px 16px; }
 .select {
   appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, #9AA3AD 50%), linear-gradient(135deg, #9AA3AD 50%, transparent 50%);
+  background-image: linear-gradient(45deg, transparent 50%, #4B5A66 50%), linear-gradient(135deg, #4B5A66 50%, transparent 50%);
   background-position: calc(100% - 19px) 21px, calc(100% - 13px) 21px;
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
@@ -517,7 +520,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 12px); }
 .note-card { padding: 0; overflow: hidden; gap: 0; }
 .note-card__thumb {
   height: 150px;
-  background: repeating-linear-gradient(45deg, #171B21, #171B21 10px, #12151A 10px, #12151A 20px);
+  background: repeating-linear-gradient(45deg, #EEF3F1, #EEF3F1 10px, #F6F9F8 10px, #F6F9F8 20px);
   display: grid; place-items: center;
 }
 .note-card__thumb span { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11px; color: var(--text-faint); }
@@ -589,7 +592,7 @@ a.contact-row:hover { border-color: var(--accent); color: var(--text); }
   border-radius: 50%;
   background: var(--whatsapp);
   display: grid; place-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+  box-shadow: 0 8px 24px rgba(19, 32, 43, .22);
   z-index: 60;
   color: #fff;
 }
@@ -638,6 +641,59 @@ a.contact-row:hover { border-color: var(--accent); color: var(--text); }
 }
 .cta-strip h2 { font-size: 22px; font-weight: 700; letter-spacing: -.5px; margin: 0 0 6px; }
 .cta-strip p { margin: 0; font-size: 14px; color: var(--text-muted); }
+
+/* ---------- Tema claro: profundidad sutil ---------- */
+.hero { background: linear-gradient(180deg, var(--accent-soft) 0%, var(--bg) 85%); }
+.card, .faq-item, .calc-panel, .form-panel, .contact-row, .cta-strip {
+  box-shadow: 0 1px 2px rgba(19, 32, 43, .05);
+}
+
+/* ---------- Cómo trabajo (pasos numerados) ---------- */
+.steps {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  counter-reset: paso;
+}
+.step { counter-increment: paso; }
+.step::before {
+  content: counter(paso);
+  display: inline-grid; place-items: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  font-weight: 700; font-size: 16px;
+}
+.step h3 { font-size: 17px; font-weight: 600; margin: 0; }
+.step p { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
+
+/* ---------- Servicios agrupados ---------- */
+.svc-for { font-size: 13.5px; line-height: 1.55; color: var(--text-muted); margin: 0; }
+.svc-list { list-style: none; margin: 4px 0 0; padding: 0; flex: 1; }
+.svc-list li { border-top: 1px solid var(--hairline); }
+.svc-list a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 11px 0; min-height: 44px;
+  color: var(--text); font-size: 14.5px; font-weight: 600;
+}
+.svc-list a::after { content: "→"; color: var(--accent); font-weight: 700; }
+.svc-list a:hover { color: var(--accent); }
+
+/* ---------- Identificación profesional (CPCECABA) ---------- */
+.id-box {
+  margin: 0;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-input) var(--r-input) 0;
+  padding: 16px 18px;
+  display: grid; grid-template-columns: auto 1fr; gap: 6px 16px;
+  font-size: 13.5px;
+}
+.id-box dt { color: var(--text-muted); }
+.id-box dd { margin: 0; color: var(--text); font-weight: 600; }
+.footer__id { color: var(--text-muted); }
+
+/* ---------- Notas en la home: tarjetas compactas sin miniatura ---------- */
+.note-card--compact .note-card__body { padding: 20px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
