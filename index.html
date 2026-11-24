@@ -48,7 +48,7 @@ a{color:var(--accent);text-decoration:none}
 .hero{padding:84px var(--pad-x) 56px;display:flex;flex-direction:column;gap:28px}
 .hero__brand{margin:0;font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:1.5px;color:var(--accent)}.hero__title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(36px,5vw,60px);line-height:1.22;font-weight:600;letter-spacing:.3px;word-spacing:.08em;margin:0;max-width:19ch}
 </style>
-<link rel="stylesheet" href="/css/styles.css?v=20261124f">
+<link rel="stylesheet" href="/css/styles.css?v=20261124g">
 
 <!-- ===== Schema.org: negocio + servicios ===== -->
 <script type="application/ld+json">
@@ -221,20 +221,60 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 
 <!-- ===== HERO ===== -->
 <section id="inicio" class="hero">
-  <p class="hero__eyebrow"><span class="bullet" aria-hidden="true"></span><span>Contadora Pública Nacional · Matrícula CPCECABA · Buenos Aires</span></p>
+  <div class="hero__grid">
+    <div class="hero__content">
+      <p class="hero__eyebrow"><span class="bullet" aria-hidden="true"></span><span>Contadora Pública Nacional · Matrícula CPCECABA · Buenos Aires</span></p>
 
-  <h1 class="hero__brand">DMB Estudio Contable<small>Daniela Magalí Bava · Contadora Pública</small></h1>
+      <h1 class="hero__brand">DMB Estudio Contable<small>Daniela Magalí Bava · Contadora Pública</small></h1>
 
-  <h2 class="hero__title">La contabilidad de tu empresa, <span class="hl">clara y al día.</span></h2>
+      <h2 class="hero__title">La contabilidad de tu empresa, <span class="hl">clara y al día.</span></h2>
 
-  <div class="hero__row">
-    <p class="hero__text">Balances, Impuesto a las Ganancias y Bienes Personales para PyMEs, sociedades y sus directores. Trabajás directamente conmigo, con plazos acordados de antemano.</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary"
-         href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20hacer%20una%20consulta%20para%20mi%20empresa"
-         target="_blank" rel="noopener noreferrer" data-cta="hero">Contame tu caso</a>
-      <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+      <p class="hero__text">Balances, Impuesto a las Ganancias y Bienes Personales para PyMEs, sociedades y sus directores. Trabajás directamente conmigo, con plazos acordados de antemano.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary"
+           href="https://wa.me/5491128276362?text=Hola%20Daniela%2C%20quiero%20hacer%20una%20consulta%20para%20mi%20empresa"
+           target="_blank" rel="noopener noreferrer" data-cta="hero">Contame tu caso</a>
+        <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+      </div>
     </div>
+
+    <figure class="hero__visual">
+      <div class="hero__panel" aria-hidden="true">
+        <div class="hero__panel-head">
+          <span class="hero__panel-title">Tu empresa · este mes</span>
+          <span class="hero__dots"><i></i><i></i><i></i></span>
+        </div>
+        <svg class="hero__chart" viewBox="0 0 300 150" focusable="false">
+          <g stroke="#E6DCE3" stroke-width="1">
+            <line x1="10" y1="30" x2="290" y2="30"></line>
+            <line x1="10" y1="70" x2="290" y2="70"></line>
+            <line x1="10" y1="110" x2="290" y2="110"></line>
+          </g>
+          <rect x="26" y="96" width="30" height="44" rx="5" fill="#D9A7C2" opacity=".5"></rect>
+          <rect x="76" y="78" width="30" height="62" rx="5" fill="#D9A7C2" opacity=".65"></rect>
+          <rect x="126" y="88" width="30" height="52" rx="5" fill="#D9A7C2" opacity=".8"></rect>
+          <rect x="176" y="62" width="30" height="78" rx="5" fill="#D9A7C2"></rect>
+          <rect x="226" y="40" width="30" height="100" rx="5" fill="#6B2D5C" opacity=".9"></rect>
+          <path d="M20 112 L91 72 L141 84 C180 62 210 46 246 24" fill="none" stroke="#6B2D5C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <g transform="translate(246 24) rotate(-45) scale(.7)">
+            <path d="M0 0 L8 16 Q8 27 0 31 Q-8 27 -8 16 Z" fill="#6B2D5C"></path>
+            <rect x="-6" y="31" width="12" height="20" rx="3" fill="#D9A7C2"></rect>
+          </g>
+        </svg>
+        <ul class="hero__tasks">
+          <li><span class="hero__tick">✓</span>Balance cerrado</li>
+          <li><span class="hero__tick">✓</span>Ganancias y Bienes Personales</li>
+          <li><span class="hero__tick">✓</span>IVA del mes presentado</li>
+        </ul>
+      </div>
+      <div class="hero__card hero__card--a">
+        <span class="hero__card-icon" aria-hidden="true">✓</span>
+        <span><strong>Presentaciones en fecha</strong><small>Vencimientos avisados con tiempo</small></span>
+      </div>
+      <div class="hero__card hero__card--b">
+        <strong>Matrícula CPCECABA</strong><small>Tº 438 Fº 176</small>
+      </div>
+    </figure>
   </div>
 
   <div class="stats">
